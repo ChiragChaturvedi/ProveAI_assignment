@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from typing import Protocol
 
 from .state import ActionDecision, AgentState, DecisionRecord, GraphState, Position
@@ -12,6 +13,8 @@ from .world import (
     teammate_name,
     update_memory_with_observation,
 )
+
+logger = logging.getLogger("dungeon_sim")
 
 
 class AgentPolicy(Protocol):
@@ -192,6 +195,13 @@ def observe_and_decide(agent_name: str, state: GraphState, policy: AgentPolicy) 
     agent = state["agents"][agent_name]
     observation = update_memory_with_observation(agent, state["world"], state["run"].turn)
     state["trace"].observations.append(observation)
+    logger.info(
+        "Turn %s | %s observation | %s | visible_objects=%s",
+        state["run"].turn,
+        agent_name,
+        observation.summary,
+        observation.visible_objects or ["none"],
+    )
 
     decision = policy.decide_action(agent_name, state)
     agent.local_memory.last_plan_goal = decision.goal
@@ -204,6 +214,16 @@ def observe_and_decide(agent_name: str, state: GraphState, policy: AgentPolicy) 
             goal=decision.goal,
             confidence=decision.confidence,
         )
+    )
+    logger.info(
+        "Turn %s | %s decision | action=%s | input=%s | goal=%s | confidence=%.2f | reason=%s",
+        state["run"].turn,
+        agent_name,
+        decision.action,
+        decision.action_input,
+        decision.goal,
+        decision.confidence,
+        decision.reason,
     )
     return decision
 

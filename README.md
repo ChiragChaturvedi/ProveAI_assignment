@@ -11,6 +11,7 @@ Two cooperative agents explore a grid dungeon, coordinate through delayed messag
 - legible turn-by-turn behavior
 - OpenTelemetry spans for node-level tracing
 - an agent policy interface that can later be replaced by an LLM
+- per-run log files stored in `logs/`
 
 ## Project Structure
 
@@ -66,7 +67,8 @@ initialize_run
 - movement is blocked by walls and a locked door
 - the deterministic agent sends messages for meaningful updates and periodic location refreshes
 - divergence records capture stale or incorrect beliefs
-- traces are emitted to the console through the OpenTelemetry console exporter
+- each simulation creates a timestamped `run_id` like `20260415_221530`
+- observations, decisions, actions, messages, divergences, and final outcomes are written to `logs/<run_id>.log`
 
 ## Extension Points
 

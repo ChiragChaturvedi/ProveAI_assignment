@@ -1,10 +1,14 @@
 from __future__ import annotations
 
+from datetime import datetime
 from enum import Enum
 from typing import Any, TypedDict
-from uuid import uuid4
 
 from pydantic import BaseModel, Field
+
+
+def generate_run_id() -> str:
+    return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 
 class RunStatus(str, Enum):
@@ -80,7 +84,7 @@ class TraceLogs(BaseModel):
 
 
 class RunState(BaseModel):
-    run_id: str = Field(default_factory=lambda: str(uuid4()))
+    run_id: str = Field(default_factory=generate_run_id)
     seed: int
     turn: int = 1
     max_turns: int = 20
@@ -139,4 +143,3 @@ class GraphState(TypedDict):
     current_agent: str | None
     current_decision: ActionDecision | None
     trace: TraceLogs
-

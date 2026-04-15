@@ -11,13 +11,14 @@ from opentelemetry.sdk.trace.export import ConsoleSpanExporter, SimpleSpanProces
 _TRACING_CONFIGURED = False
 
 
-def configure_tracing() -> None:
+def configure_tracing(export_console: bool = False) -> None:
     global _TRACING_CONFIGURED
     if _TRACING_CONFIGURED:
         return
 
     provider = TracerProvider(resource=Resource.create({"service.name": "dungeon-sim"}))
-    provider.add_span_processor(SimpleSpanProcessor(ConsoleSpanExporter()))
+    if export_console:
+        provider.add_span_processor(SimpleSpanProcessor(ConsoleSpanExporter()))
     trace.set_tracer_provider(provider)
     _TRACING_CONFIGURED = True
 
@@ -34,4 +35,3 @@ def node_span(name: str, **attributes: object) -> Iterator[object]:
         for key, value in attributes.items():
             span.set_attribute(key, value)
         yield span
-

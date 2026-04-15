@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import deque
+import logging
 from typing import Iterable
 
 from .state import (
@@ -21,6 +22,7 @@ from .state import (
 )
 
 VISIBLE_RADIUS = 2
+logger = logging.getLogger("dungeon_sim")
 
 DIRECTIONS: dict[str, tuple[int, int]] = {
     "north": (0, -1),
@@ -98,6 +100,7 @@ def add_event(state: GraphState, kind: str, summary: str) -> None:
     state["trace"].events.append(
         EventRecord(turn=state["run"].turn, kind=kind, summary=summary)
     )
+    logger.info("Turn %s | event=%s | %s", state["run"].turn, kind, summary)
 
 
 def wall_at(world: WorldState, position: Position) -> bool:
@@ -192,6 +195,14 @@ def deliver_pending_messages(state: GraphState) -> None:
         recipient = state["agents"][message.recipient]
         recipient.inbox_messages.append(message)
         apply_message_to_memory(recipient, message)
+        logger.info(
+            "Turn %s | message delivered | from=%s | to=%s | content=%s | metadata=%s",
+            run.turn,
+            message.sender,
+            message.recipient,
+            message.content,
+            message.metadata,
+        )
         add_event(
             state,
             "message_delivered",
@@ -312,9 +323,16 @@ def apply_action(state: GraphState, agent_name: str, decision: ActionDecision) -
         )
         state["pending_messages"].append(message)
         success = True
-        summary = (
-            f"Turn {run.turn}: {agent_name} sent a message to {message.recipient}."
+        logger.info(
+            "Turn %s | message queued | from=%s | to=%s | deliver_turn=%s | content=%s | metadata=%s",
+            run.turn,
+            message.sender,
+            message.recipient,
+            message.deliver_turn,
+            message.content,
+            message.metadata,
         )
+        summary = f"Turn {run.turn}: {agent_name} sent a message to {message.recipient}."
     elif decision.action == "wait":
         success = True
         summary = f"Turn {run.turn}: {agent_name} waited."
@@ -385,6 +403,14 @@ def detect_divergences(state: GraphState, agent_name: str) -> list[DivergenceRec
 
     for record in found:
         state["trace"].divergences.append(record)
+        logger.warning(
+            "Turn %s | %s divergence | kind=%s | belief=%s | reality=%s",
+            run.turn,
+            agent_name,
+            record.kind,
+            record.belief,
+            record.reality,
+        )
         add_event(
             state,
             "divergence",
