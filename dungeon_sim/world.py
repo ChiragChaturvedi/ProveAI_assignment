@@ -63,6 +63,7 @@ def create_initial_state(seed: int = 7, max_turns: int = 20) -> GraphState:
         "current_agent": None,
         "current_decision": None,
         "trace": TraceLogs(),
+        "telemetry": {},
     }
 
 
@@ -186,7 +187,7 @@ def apply_message_to_memory(agent: AgentState, message: Message) -> None:
         memory.seen_key_position = Position.model_validate(message.metadata["key_position"])
 
 
-def deliver_pending_messages(state: GraphState) -> None:
+def deliver_pending_messages(state: GraphState) -> list[Message]:
     run = state["run"]
     ready = [message for message in state["pending_messages"] if message.deliver_turn <= run.turn]
     remaining = [message for message in state["pending_messages"] if message.deliver_turn > run.turn]
@@ -210,6 +211,7 @@ def deliver_pending_messages(state: GraphState) -> None:
         )
 
     state["pending_messages"] = remaining
+    return ready
 
 
 def pathfind_direction(
@@ -419,24 +421,38 @@ def detect_divergences(state: GraphState, agent_name: str) -> list[DivergenceRec
     return found
 
 
-def evaluate_termination(state: GraphState) -> None:
+def evaluate_termination(state: GraphState) -> dict[str, object]:
     run = state["run"]
     world = state["world"]
     agents = list(state["agents"].values())
+    status_before = run.status.value
 
     everyone_at_exit = all(same_position(agent.position, world.exit_position) for agent in agents)
     if everyone_at_exit and not world.door_locked:
         run.status = RunStatus.SUCCESS
         add_event(state, "status", f"Turn {run.turn}: SUCCESS in {run.turn} turns.")
-        return
+        return {
+            "status_before": status_before,
+            "status_after": run.status.value,
+            "termination_reason": "all_agents_reached_exit",
+        }
 
     if run.turn >= run.max_turns:
         run.status = RunStatus.FAILED
         add_event(state, "status", f"Turn {run.turn}: FAILED after reaching max turns.")
-        return
+        return {
+            "status_before": status_before,
+            "status_after": run.status.value,
+            "termination_reason": "max_turns_reached",
+        }
 
     run.status = RunStatus.RUNNING
     run.turn += 1
+    return {
+        "status_before": status_before,
+        "status_after": run.status.value,
+        "termination_reason": "continue",
+    }
 
 
 def format_trace_summary(state: GraphState) -> str:

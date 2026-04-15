@@ -1,9 +1,22 @@
 from __future__ import annotations
 
 import logging
+import os
 from typing import Protocol
 
-from .state import ActionDecision, AgentState, DecisionRecord, GraphState, Position
+import litellm
+from litellm import completion
+from litellm.exceptions import JSONSchemaValidationError
+
+from .prompts import LLM_SYSTEM_PROMPT, build_agent_prompt
+from .state import (
+    ACTION_DECISION_RESPONSE_FORMAT,
+    ActionDecision,
+    AgentState,
+    DecisionRecord,
+    GraphState,
+    Position,
+)
 from .world import (
     adjacent_positions,
     frontier_targets,
@@ -15,6 +28,10 @@ from .world import (
 )
 
 logger = logging.getLogger("dungeon_sim")
+
+litellm.suppress_debug_info = True
+litellm.turn_off_message_logging = True
+litellm.enable_json_schema_validation = True
 
 
 class AgentPolicy(Protocol):
@@ -40,7 +57,10 @@ class DummyDeterministicAgent:
         if not world.door_locked and same_position(agent.position, world.exit_position):
             return ActionDecision(
                 action="wait",
-                action_input={},
+                direction=None,
+                recipient=None,
+                content=None,
+                metadata=None,
                 reason="already at the exit and waiting for the teammate",
                 goal="reach_exit",
                 confidence=0.99,
@@ -60,11 +80,10 @@ class DummyDeterministicAgent:
                 metadata["exit_position"] = memory.seen_exit_position.model_dump()
             return ActionDecision(
                 action="send_message",
-                action_input={
-                    "recipient": teammate.name,
-                    "content": self._message_content(agent),
-                    "metadata": metadata,
-                },
+                direction=None,
+                recipient=teammate.name,
+                content=self._message_content(agent),
+                metadata=metadata,
                 reason="sharing a meaningful state update with the teammate",
                 goal="coordinate",
                 confidence=0.7,
@@ -73,7 +92,10 @@ class DummyDeterministicAgent:
         if world.key_position and not agent.has_key and is_adjacent(agent.position, world.key_position):
             return ActionDecision(
                 action="pickup_key",
-                action_input={},
+                direction=None,
+                recipient=None,
+                content=None,
+                metadata=None,
                 reason="the key is within reach",
                 goal="retrieve_key",
                 confidence=0.99,
@@ -84,7 +106,10 @@ class DummyDeterministicAgent:
             if direction:
                 return ActionDecision(
                     action="move",
-                    action_input={"direction": direction},
+                    direction=direction,
+                    recipient=None,
+                    content=None,
+                    metadata=None,
                     reason="moving toward visible key",
                     goal="retrieve_key",
                     confidence=0.82,
@@ -93,7 +118,10 @@ class DummyDeterministicAgent:
         if agent.has_key and is_adjacent(agent.position, world.door_position) and world.door_locked:
             return ActionDecision(
                 action="unlock_door",
-                action_input={},
+                direction=None,
+                recipient=None,
+                content=None,
+                metadata=None,
                 reason="holding the key and standing next to the locked door",
                 goal="unlock_door",
                 confidence=0.98,
@@ -104,7 +132,10 @@ class DummyDeterministicAgent:
             if direction:
                 return ActionDecision(
                     action="move",
-                    action_input={"direction": direction},
+                    direction=direction,
+                    recipient=None,
+                    content=None,
+                    metadata=None,
                     reason="carrying the key and searching the center corridor for the door",
                     goal="find_door",
                     confidence=0.84,
@@ -116,7 +147,10 @@ class DummyDeterministicAgent:
             if direction:
                 return ActionDecision(
                     action="move",
-                    action_input={"direction": direction},
+                    direction=direction,
+                    recipient=None,
+                    content=None,
+                    metadata=None,
                     reason="moving into position to unlock the door",
                     goal="unlock_door",
                     confidence=0.88,
@@ -127,7 +161,10 @@ class DummyDeterministicAgent:
             if direction:
                 return ActionDecision(
                     action="move",
-                    action_input={"direction": direction},
+                    direction=direction,
+                    recipient=None,
+                    content=None,
+                    metadata=None,
                     reason="the door is open, so push through the corridor to scout the far side",
                     goal="reach_exit",
                     confidence=0.86,
@@ -138,7 +175,10 @@ class DummyDeterministicAgent:
             if direction:
                 return ActionDecision(
                     action="move",
-                    action_input={"direction": direction},
+                    direction=direction,
+                    recipient=None,
+                    content=None,
+                    metadata=None,
                     reason="door is open and the exit is known",
                     goal="reach_exit",
                     confidence=0.9,
@@ -149,7 +189,10 @@ class DummyDeterministicAgent:
         if direction:
             return ActionDecision(
                 action="move",
-                action_input={"direction": direction},
+                direction=direction,
+                recipient=None,
+                content=None,
+                metadata=None,
                 reason="exploring the nearest unknown frontier",
                 goal="explore",
                 confidence=0.66,
@@ -157,7 +200,10 @@ class DummyDeterministicAgent:
 
         return ActionDecision(
             action="inspect",
-            action_input={},
+            direction=None,
+            recipient=None,
+            content=None,
+            metadata=None,
             reason="no strong move available, so gather more information",
             goal="explore",
             confidence=0.55,
@@ -189,6 +235,240 @@ class DummyDeterministicAgent:
         if agent.local_memory.believed_door_unlocked:
             details.append("door_unlocked=true")
         return "; ".join(details)
+
+
+class LiteLLMJsonAgent:
+    """LLM-backed policy using LiteLLM so providers can be swapped through config."""
+
+    def __init__(
+        self,
+        model: str,
+        temperature: float = 0.2,
+        max_tokens: int = 300,
+        fallback_policy: AgentPolicy | None = None,
+    ) -> None:
+        self.model = model
+        self.temperature = temperature
+        self.max_tokens = max_tokens
+        self.fallback_policy = fallback_policy
+        self.response_format = ACTION_DECISION_RESPONSE_FORMAT
+
+    def decide_action(self, agent_name: str, state: GraphState) -> ActionDecision:
+        agent = state["agents"][agent_name]
+        teammate = state["agents"][teammate_name(agent_name)]
+        memory = agent.local_memory
+        latest_observation = self._latest_observation(agent_name, state)
+        prompt = build_agent_prompt(
+            agent_name=agent_name,
+            position_summary=f"({agent.position.x}, {agent.position.y})",
+            visible_summary=latest_observation.summary if latest_observation is not None else "No observation captured yet.",
+            memory_summary=(
+                f"known_tiles={len(memory.known_tiles)}, "
+                f"seen_key={self._format_position(memory.seen_key_position)}, "
+                f"seen_door={self._format_position(memory.seen_door_position)}, "
+                f"seen_exit={self._format_position(memory.seen_exit_position)}, "
+                f"believed_door_unlocked={memory.believed_door_unlocked}, "
+                f"believed_teammate_has_key={memory.believed_teammate_has_key}, "
+                f"believed_teammate_position={self._format_position(memory.believed_teammate_position)}"
+            ),
+            inbox_summary=self._summarize_inbox(agent),
+            teammate_summary=(
+                f"name={teammate.name}, "
+                f"last_known_position={self._format_position(memory.believed_teammate_position)}, "
+                f"stale_after_turn={memory.last_teammate_position_turn}"
+            ),
+        )
+
+        try:
+            response = completion(
+                model=self.model,
+                temperature=self.temperature,
+                max_tokens=self.max_tokens,
+                response_format=self.response_format,
+                messages=[
+                    {"role": "system", "content": LLM_SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+            )
+            decision = self._extract_structured_decision(response)
+            logger.info(
+                "Turn %s | %s llm_structured_response | model=%s | decision=%s",
+                state["run"].turn,
+                agent_name,
+                self.model,
+                decision.model_dump_json(),
+            )
+            return self._normalize_decision(decision, agent_name, state)
+        except JSONSchemaValidationError as exc:
+            raw_response = getattr(exc, "raw_response", None)
+            logger.exception(
+                "Turn %s | %s llm_schema_error | model=%s | error=%s | raw_response=%s",
+                state["run"].turn,
+                agent_name,
+                self.model,
+                exc,
+                raw_response,
+            )
+            if self.fallback_policy is not None:
+                logger.warning(
+                    "Turn %s | %s falling back to deterministic policy after schema validation failure",
+                    state["run"].turn,
+                    agent_name,
+                )
+                return self.fallback_policy.decide_action(agent_name, state)
+            raise
+        except Exception as exc:
+            logger.exception(
+                "Turn %s | %s llm_error | model=%s | error=%s",
+                state["run"].turn,
+                agent_name,
+                self.model,
+                exc,
+            )
+            if self.fallback_policy is not None:
+                logger.warning(
+                    "Turn %s | %s falling back to deterministic policy after LLM failure",
+                    state["run"].turn,
+                    agent_name,
+                )
+                return self.fallback_policy.decide_action(agent_name, state)
+            raise
+
+    def _latest_observation(self, agent_name: str, state: GraphState):
+        for observation in reversed(state["trace"].observations):
+            if observation.agent == agent_name:
+                return observation
+        return None
+
+    def _summarize_inbox(self, agent: AgentState) -> str:
+        if not agent.inbox_messages:
+            return "No messages."
+        latest = agent.inbox_messages[-3:]
+        return " | ".join(
+            f"from={message.sender}, turn={message.sent_turn}, content={message.content}"
+            for message in latest
+        )
+
+    def _format_position(self, position: Position | None) -> str:
+        if position is None:
+            return "unknown"
+        return f"({position.x}, {position.y})"
+
+    def _extract_structured_decision(self, response: object) -> ActionDecision:
+        message = response.choices[0].message
+        parsed = getattr(message, "parsed", None)
+        if parsed is not None:
+            if isinstance(parsed, ActionDecision):
+                return parsed
+            return ActionDecision.model_validate(parsed)
+
+        content = getattr(message, "content", None)
+        if isinstance(content, str) and content.strip():
+            logger.warning(
+                "LiteLLM returned structured content without message.parsed; "
+                "validating message.content against ActionDecision instead."
+            )
+            return ActionDecision.model_validate_json(content)
+
+        raise ValueError(
+            "LiteLLM response did not include a parsed structured object or "
+            "a JSON content payload matching ActionDecision."
+        )
+
+    def _normalize_decision(self, decision: ActionDecision, agent_name: str, state: GraphState) -> ActionDecision:
+        agent = state["agents"][agent_name]
+        world = state["world"]
+        valid_actions = {"move", "inspect", "pickup_key", "unlock_door", "send_message", "wait"}
+        if decision.action not in valid_actions:
+            raise ValueError(f"Unsupported action from LLM: {decision.action}")
+
+        if decision.action == "move":
+            direction = str(decision.direction or "").lower()
+            if direction not in {"north", "south", "east", "west"}:
+                fallback = self._get_fallback_decision(agent_name, state)
+                if fallback is not None and fallback.action == "move":
+                    logger.warning(
+                        "Turn %s | %s invalid llm move direction=%s, substituting fallback direction=%s",
+                        state["run"].turn,
+                        agent_name,
+                        direction,
+                        fallback.action_input.get("direction"),
+                    )
+                    return fallback
+                raise ValueError(f"Invalid move direction from LLM: {direction}")
+            decision.direction = direction
+
+        if decision.action == "pickup_key":
+            if world.key_position is None or not is_adjacent(agent.position, world.key_position):
+                fallback = self._get_fallback_decision(agent_name, state)
+                if fallback is not None:
+                    logger.warning(
+                        "Turn %s | %s invalid llm pickup_key, substituting fallback action=%s",
+                        state["run"].turn,
+                        agent_name,
+                        fallback.action,
+                    )
+                    return fallback
+
+        if decision.action == "unlock_door":
+            if not agent.has_key or not world.door_locked or not is_adjacent(agent.position, world.door_position):
+                fallback = self._get_fallback_decision(agent_name, state)
+                if fallback is not None:
+                    logger.warning(
+                        "Turn %s | %s invalid llm unlock_door, substituting fallback action=%s",
+                        state["run"].turn,
+                        agent_name,
+                        fallback.action,
+                    )
+                    return fallback
+
+        if decision.action == "send_message":
+            decision.recipient = decision.recipient or teammate_name(agent_name)
+            decision.content = decision.content or "Status update."
+            if not isinstance(decision.metadata, dict):
+                decision.metadata = {}
+
+        if decision.action in {"inspect", "pickup_key", "unlock_door", "wait"}:
+            decision.direction = None
+            decision.recipient = None
+            decision.content = None
+            decision.metadata = None
+
+        decision.confidence = max(0.0, min(1.0, float(decision.confidence)))
+        return decision
+
+    def _get_fallback_decision(self, agent_name: str, state: GraphState) -> ActionDecision | None:
+        if self.fallback_policy is None:
+            return None
+        return self.fallback_policy.decide_action(agent_name, state)
+
+
+def build_agent_policy_from_env() -> AgentPolicy:
+    mode = os.getenv("DUNGEON_AGENT_MODE", "litellm").strip().lower()
+    deterministic = DummyDeterministicAgent()
+
+    if mode == "deterministic":
+        logger.info("Configured deterministic agent policy from environment.")
+        return deterministic
+
+    model = os.getenv("DUNGEON_AGENT_MODEL", "gemini/gemini-2.5-flash").strip()
+    temperature = float(os.getenv("DUNGEON_AGENT_TEMPERATURE", "0.2"))
+    max_tokens = int(os.getenv("DUNGEON_AGENT_MAX_TOKENS", "512"))
+    fallback_enabled = os.getenv("DUNGEON_AGENT_FALLBACK_TO_DETERMINISTIC", "true").strip().lower() == "true"
+
+    logger.info(
+        "Configured LiteLLM agent policy from environment | model=%s | temperature=%s | max_tokens=%s | fallback=%s",
+        model,
+        temperature,
+        max_tokens,
+        fallback_enabled,
+    )
+    return LiteLLMJsonAgent(
+        model=model,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        fallback_policy=deterministic if fallback_enabled else None,
+    )
 
 
 def observe_and_decide(agent_name: str, state: GraphState, policy: AgentPolicy) -> ActionDecision:

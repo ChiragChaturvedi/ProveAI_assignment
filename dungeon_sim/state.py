@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, TypedDict
+from typing import Any, Literal, TypedDict
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 def generate_run_id() -> str:
@@ -16,6 +16,70 @@ class RunStatus(str, Enum):
     RUNNING = "running"
     SUCCESS = "success"
     FAILED = "failed"
+
+
+MOVE_DIRECTION_ENUM = ["north", "south", "east", "west"]
+ACTION_ENUM = ["move", "inspect", "pickup_key", "unlock_door", "send_message", "wait"]
+
+ACTION_DECISION_JSON_SCHEMA = {
+    "type": "object",
+    "title": "ActionDecision",
+    "additionalProperties": False,
+    "required": [
+        "action",
+        "direction",
+        "recipient",
+        "content",
+        "metadata",
+        "reason",
+        "goal",
+        "confidence",
+    ],
+    "properties": {
+        "action": {
+            "type": "string",
+            "enum": ACTION_ENUM,
+        },
+        "direction": {
+            "type": ["string", "null"],
+            "enum": [*MOVE_DIRECTION_ENUM, None],
+        },
+        "recipient": {
+            "type": ["string", "null"],
+        },
+        "content": {
+            "type": ["string", "null"],
+        },
+        "metadata": {
+            "type": ["object", "null"],
+            "additionalProperties": True,
+        },
+        "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+        },
+        "goal": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40,
+        },
+        "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0,
+        },
+    },
+}
+
+ACTION_DECISION_RESPONSE_FORMAT = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "ActionDecision",
+        "strict": True,
+        "schema": ACTION_DECISION_JSON_SCHEMA,
+    },
+}
 
 
 class Position(BaseModel):
@@ -128,11 +192,48 @@ class AgentState(BaseModel):
 
 
 class ActionDecision(BaseModel):
-    action: str
-    action_input: dict[str, Any] = Field(default_factory=dict)
-    reason: str
-    goal: str
-    confidence: float
+    model_config = ConfigDict(extra="forbid")
+
+    action: Literal["move", "inspect", "pickup_key", "unlock_door", "send_message", "wait"]
+    direction: Literal["north", "south", "east", "west"] | None
+    recipient: str | None
+    content: str | None
+    metadata: dict[str, Any] | None
+    reason: str = Field(max_length=160)
+    goal: str = Field(max_length=40)
+    confidence: float = Field(ge=0.0, le=1.0)
+
+    @model_validator(mode="after")
+    def validate_action_input(self) -> "ActionDecision":
+        if self.action == "move":
+            if self.direction not in MOVE_DIRECTION_ENUM:
+                raise ValueError("move actions require a valid direction")
+        elif self.direction is not None:
+            raise ValueError("only move actions may include a direction")
+
+        if self.action == "send_message":
+            if not self.recipient or not self.content:
+                raise ValueError("send_message actions require recipient and content")
+            if self.metadata is None:
+                self.metadata = {}
+        else:
+            if self.recipient is not None or self.content is not None:
+                raise ValueError("only send_message actions may include recipient or content")
+            if self.metadata is not None and self.action != "send_message":
+                raise ValueError("only send_message actions may include metadata")
+        return self
+
+    @property
+    def action_input(self) -> dict[str, Any]:
+        if self.action == "move":
+            return {"direction": self.direction}
+        if self.action == "send_message":
+            return {
+                "recipient": self.recipient,
+                "content": self.content,
+                "metadata": self.metadata or {},
+            }
+        return {}
 
 
 class GraphState(TypedDict):
@@ -143,3 +244,4 @@ class GraphState(TypedDict):
     current_agent: str | None
     current_decision: ActionDecision | None
     trace: TraceLogs
+    telemetry: dict[str, Any]

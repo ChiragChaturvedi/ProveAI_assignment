@@ -1,9 +1,13 @@
-```gitignore
 # Python cache
 __pycache__/
 *.py[cod]
 
+# Virtual envs
+.venv/
+
+# Environment files
+.env
+
 # Logs
 logs/
 *.log
-```
