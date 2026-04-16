@@ -65,6 +65,18 @@ To review a run log in the legibility UI:
 streamlit run ProveAI_assignment/legibility_layer/app.py
 ```
 
+To export a structured JSON view of a log:
+
+```bash
+python ProveAI_assignment/legibility_layer/export_json.py ProveAI_assignment/logs/<run_id>.log
+```
+
+To export the analyzer's review model instead of the raw parsed log:
+
+```bash
+python ProveAI_assignment/legibility_layer/export_json.py ProveAI_assignment/logs/<run_id>.log --mode review
+```
+
 ## LangGraph Loop
 
 The graph executes this loop:
@@ -91,6 +103,22 @@ initialize_run
 - divergence records capture stale or incorrect beliefs
 - each simulation creates a timestamped `run_id` like `20260415_221530`
 - observations, decisions, actions, messages, divergences, and final outcomes are written to `logs/<run_id>.log`
+
+## Legibility Layer
+
+The project includes a lightweight review pipeline under `legibility_layer/`:
+
+`.log -> parser -> analyzer -> review model -> UI`
+
+It is meant for run review and debugging, not gameplay. The parser extracts structured records from the simulation logs, the analyzer applies deterministic heuristics to diagnose failure modes, and the Streamlit UI renders the resulting review.
+
+Current legibility layer components:
+
+- `parser.py`: converts raw log lines into typed parsed records
+- `analyzer.py`: computes failure labels, metrics, key moments, and recommendations
+- `review_models.py`: defines the UI-facing `RunReview` schema
+- `app.py`: renders the review in Streamlit
+- `export_json.py`: exports parsed runs or reviews as neat JSON
 
 ## `.env` Example
 
