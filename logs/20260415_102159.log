@@ -1,0 +1,185 @@
+2026-04-15 10:21:59,238 | INFO | Starting simulation | run_id=20260415_102159 | seed=7 | max_turns=20
+2026-04-15 10:21:59,245 | INFO | Turn 1 | event=status | Turn 1: initialized run 20260415_102159.
+2026-04-15 10:21:59,246 | INFO | Turn 1 | Agent A observation | Agent A observed 6 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,246 | INFO | Turn 1 | Agent A decision | action=move | input={'direction': 'south'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,246 | INFO | Turn 1 | event=action | Turn 1: Agent A moved south to (0, 1).
+2026-04-15 10:21:59,247 | INFO | Turn 1 | Agent B observation | Agent B observed 6 tiles and saw key. | visible_objects=['key']
+2026-04-15 10:21:59,247 | INFO | Turn 1 | Agent B decision | action=move | input={'direction': 'north'} | goal=retrieve_key | confidence=0.82 | reason=moving toward visible key
+2026-04-15 10:21:59,247 | INFO | Turn 1 | event=action | Turn 1: Agent B moved north to (0, 5).
+2026-04-15 10:21:59,248 | INFO | Turn 2 | Agent A observation | Agent A observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,248 | INFO | Turn 2 | Agent A decision | action=move | input={'direction': 'south'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,248 | INFO | Turn 2 | event=action | Turn 2: Agent A moved south to (0, 2).
+2026-04-15 10:21:59,248 | INFO | Turn 2 | Agent B observation | Agent B observed 8 tiles and saw key. | visible_objects=['key']
+2026-04-15 10:21:59,248 | INFO | Turn 2 | Agent B decision | action=pickup_key | input={} | goal=retrieve_key | confidence=0.99 | reason=the key is within reach
+2026-04-15 10:21:59,249 | INFO | Turn 2 | event=action | Turn 2: Agent B picked up the key.
+2026-04-15 10:21:59,249 | INFO | Turn 3 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,250 | INFO | Turn 3 | Agent A decision | action=move | input={'direction': 'south'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,250 | INFO | Turn 3 | event=action | Turn 3: Agent A moved south to (0, 3).
+2026-04-15 10:21:59,250 | INFO | Turn 3 | Agent B observation | Agent B observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,250 | INFO | Turn 3 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'position=(0,5); holding_key=true', 'metadata': {'position': {'x': 0, 'y': 5}, 'teammate_has_key': True, 'door_unlocked': False}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,250 | INFO | Turn 3 | message queued | from=Agent B | to=Agent A | deliver_turn=4 | content=position=(0,5); holding_key=true | metadata={'position': {'x': 0, 'y': 5}, 'teammate_has_key': True, 'door_unlocked': False}
+2026-04-15 10:21:59,250 | INFO | Turn 3 | event=action | Turn 3: Agent B sent a message to Agent A.
+2026-04-15 10:21:59,251 | INFO | Turn 4 | message delivered | from=Agent B | to=Agent A | content=position=(0,5); holding_key=true | metadata={'position': {'x': 0, 'y': 5}, 'teammate_has_key': True, 'door_unlocked': False}
+2026-04-15 10:21:59,251 | INFO | Turn 4 | event=message_delivered | Turn 4: Message delivered from Agent B to Agent A.
+2026-04-15 10:21:59,251 | INFO | Turn 4 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,251 | INFO | Turn 4 | Agent A decision | action=move | input={'direction': 'south'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,251 | INFO | Turn 4 | event=action | Turn 4: Agent A moved south to (0, 4).
+2026-04-15 10:21:59,251 | INFO | Turn 4 | Agent B observation | Agent B observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,252 | INFO | Turn 4 | Agent B decision | action=move | input={'direction': 'north'} | goal=find_door | confidence=0.84 | reason=carrying the key and searching the center corridor for the door
+2026-04-15 10:21:59,252 | INFO | Turn 4 | event=action | Turn 4: Agent B moved north to (0, 4).
+2026-04-15 10:21:59,252 | INFO | Turn 5 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,252 | INFO | Turn 5 | Agent A decision | action=move | input={'direction': 'south'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,253 | INFO | Turn 5 | event=action | Turn 5: Agent A moved south to (0, 5).
+2026-04-15 10:21:59,253 | WARNING | Turn 5 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (0, 5) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,253 | INFO | Turn 5 | event=divergence | Turn 5: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,253 | INFO | Turn 5 | Agent B observation | Agent B observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,253 | INFO | Turn 5 | Agent B decision | action=move | input={'direction': 'north'} | goal=find_door | confidence=0.84 | reason=carrying the key and searching the center corridor for the door
+2026-04-15 10:21:59,253 | INFO | Turn 5 | event=action | Turn 5: Agent B moved north to (0, 3).
+2026-04-15 10:21:59,254 | INFO | Turn 6 | Agent A observation | Agent A observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,254 | INFO | Turn 6 | Agent A decision | action=move | input={'direction': 'south'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,254 | INFO | Turn 6 | event=action | Turn 6: Agent A moved south to (0, 6).
+2026-04-15 10:21:59,254 | WARNING | Turn 6 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (0, 5) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,254 | INFO | Turn 6 | event=divergence | Turn 6: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,254 | INFO | Turn 6 | Agent B observation | Agent B observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,254 | INFO | Turn 6 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'position=(0,3); holding_key=true', 'metadata': {'position': {'x': 0, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': False}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,254 | INFO | Turn 6 | message queued | from=Agent B | to=Agent A | deliver_turn=7 | content=position=(0,3); holding_key=true | metadata={'position': {'x': 0, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': False}
+2026-04-15 10:21:59,254 | INFO | Turn 6 | event=action | Turn 6: Agent B sent a message to Agent A.
+2026-04-15 10:21:59,255 | INFO | Turn 7 | message delivered | from=Agent B | to=Agent A | content=position=(0,3); holding_key=true | metadata={'position': {'x': 0, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': False}
+2026-04-15 10:21:59,255 | INFO | Turn 7 | event=message_delivered | Turn 7: Message delivered from Agent B to Agent A.
+2026-04-15 10:21:59,255 | INFO | Turn 7 | Agent A observation | Agent A observed 6 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,256 | INFO | Turn 7 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,256 | INFO | Turn 7 | event=action | Turn 7: Agent A moved east to (1, 6).
+2026-04-15 10:21:59,256 | INFO | Turn 7 | Agent B observation | Agent B observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,256 | INFO | Turn 7 | Agent B decision | action=move | input={'direction': 'east'} | goal=find_door | confidence=0.84 | reason=carrying the key and searching the center corridor for the door
+2026-04-15 10:21:59,256 | INFO | Turn 7 | event=action | Turn 7: Agent B moved east to (1, 3).
+2026-04-15 10:21:59,257 | INFO | Turn 8 | Agent A observation | Agent A observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,257 | INFO | Turn 8 | Agent A decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,257 | INFO | Turn 8 | event=action | Turn 8: Agent A moved north to (1, 5).
+2026-04-15 10:21:59,257 | WARNING | Turn 8 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (0, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,258 | INFO | Turn 8 | event=divergence | Turn 8: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,258 | INFO | Turn 8 | Agent B observation | Agent B observed 12 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,258 | INFO | Turn 8 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'position=(1,3); holding_key=true', 'metadata': {'position': {'x': 1, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': False, 'door_position': {'x': 3, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,258 | INFO | Turn 8 | message queued | from=Agent B | to=Agent A | deliver_turn=9 | content=position=(1,3); holding_key=true | metadata={'position': {'x': 1, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': False, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,258 | INFO | Turn 8 | event=action | Turn 8: Agent B sent a message to Agent A.
+2026-04-15 10:21:59,258 | INFO | Turn 9 | message delivered | from=Agent B | to=Agent A | content=position=(1,3); holding_key=true | metadata={'position': {'x': 1, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': False, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,258 | INFO | Turn 9 | event=message_delivered | Turn 9: Message delivered from Agent B to Agent A.
+2026-04-15 10:21:59,258 | INFO | Turn 9 | Agent A observation | Agent A observed 11 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,259 | INFO | Turn 9 | Agent A decision | action=send_message | input={'recipient': 'Agent B', 'content': 'position=(1,5)', 'metadata': {'position': {'x': 1, 'y': 5}, 'teammate_has_key': False, 'door_unlocked': False, 'door_position': {'x': 3, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,259 | INFO | Turn 9 | message queued | from=Agent A | to=Agent B | deliver_turn=10 | content=position=(1,5) | metadata={'position': {'x': 1, 'y': 5}, 'teammate_has_key': False, 'door_unlocked': False, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,259 | INFO | Turn 9 | event=action | Turn 9: Agent A sent a message to Agent B.
+2026-04-15 10:21:59,259 | INFO | Turn 9 | Agent B observation | Agent B observed 12 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,259 | INFO | Turn 9 | Agent B decision | action=move | input={'direction': 'east'} | goal=unlock_door | confidence=0.88 | reason=moving into position to unlock the door
+2026-04-15 10:21:59,259 | INFO | Turn 9 | event=action | Turn 9: Agent B moved east to (2, 3).
+2026-04-15 10:21:59,260 | INFO | Turn 10 | message delivered | from=Agent A | to=Agent B | content=position=(1,5) | metadata={'position': {'x': 1, 'y': 5}, 'teammate_has_key': False, 'door_unlocked': False, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,260 | INFO | Turn 10 | event=message_delivered | Turn 10: Message delivered from Agent A to Agent B.
+2026-04-15 10:21:59,260 | INFO | Turn 10 | Agent A observation | Agent A observed 11 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,260 | INFO | Turn 10 | Agent A decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.66 | reason=exploring the nearest unknown frontier
+2026-04-15 10:21:59,260 | INFO | Turn 10 | event=action | Turn 10: Agent A moved north to (1, 4).
+2026-04-15 10:21:59,260 | WARNING | Turn 10 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (1, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,260 | INFO | Turn 10 | event=divergence | Turn 10: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,260 | INFO | Turn 10 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,260 | INFO | Turn 10 | Agent B decision | action=unlock_door | input={} | goal=unlock_door | confidence=0.98 | reason=holding the key and standing next to the locked door
+2026-04-15 10:21:59,261 | INFO | Turn 10 | event=action | Turn 10: Agent B unlocked the door.
+2026-04-15 10:21:59,261 | INFO | Turn 11 | Agent A observation | Agent A observed 12 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 10:21:59,261 | INFO | Turn 11 | Agent A decision | action=move | input={'direction': 'north'} | goal=reach_exit | confidence=0.86 | reason=the door is open, so push through the corridor to scout the far side
+2026-04-15 10:21:59,261 | INFO | Turn 11 | event=action | Turn 11: Agent A moved north to (1, 3).
+2026-04-15 10:21:59,261 | WARNING | Turn 11 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (1, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,261 | INFO | Turn 11 | event=divergence | Turn 11: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,262 | INFO | Turn 11 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,262 | INFO | Turn 11 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'position=(2,3); holding_key=true; door_unlocked=true', 'metadata': {'position': {'x': 2, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,262 | INFO | Turn 11 | message queued | from=Agent B | to=Agent A | deliver_turn=12 | content=position=(2,3); holding_key=true; door_unlocked=true | metadata={'position': {'x': 2, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,262 | INFO | Turn 11 | event=action | Turn 11: Agent B sent a message to Agent A.
+2026-04-15 10:21:59,263 | WARNING | Turn 11 | Agent B divergence | kind=stale_teammate_location | belief=Agent A is at (1, 5) | reality=Agent A is elsewhere
+2026-04-15 10:21:59,263 | INFO | Turn 11 | event=divergence | Turn 11: Agent B divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,263 | INFO | Turn 12 | message delivered | from=Agent B | to=Agent A | content=position=(2,3); holding_key=true; door_unlocked=true | metadata={'position': {'x': 2, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,263 | INFO | Turn 12 | event=message_delivered | Turn 12: Message delivered from Agent B to Agent A.
+2026-04-15 10:21:59,263 | INFO | Turn 12 | Agent A observation | Agent A observed 12 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,263 | INFO | Turn 12 | Agent A decision | action=send_message | input={'recipient': 'Agent B', 'content': 'position=(1,3); door_unlocked=true', 'metadata': {'position': {'x': 1, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,263 | INFO | Turn 12 | message queued | from=Agent A | to=Agent B | deliver_turn=13 | content=position=(1,3); door_unlocked=true | metadata={'position': {'x': 1, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,263 | INFO | Turn 12 | event=action | Turn 12: Agent A sent a message to Agent B.
+2026-04-15 10:21:59,264 | INFO | Turn 12 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,264 | INFO | Turn 12 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'position=(2,3); holding_key=true; door_unlocked=true', 'metadata': {'position': {'x': 2, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,264 | INFO | Turn 12 | message queued | from=Agent B | to=Agent A | deliver_turn=13 | content=position=(2,3); holding_key=true; door_unlocked=true | metadata={'position': {'x': 2, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,264 | INFO | Turn 12 | event=action | Turn 12: Agent B sent a message to Agent A.
+2026-04-15 10:21:59,264 | WARNING | Turn 12 | Agent B divergence | kind=stale_teammate_location | belief=Agent A is at (1, 5) | reality=Agent A is elsewhere
+2026-04-15 10:21:59,264 | INFO | Turn 12 | event=divergence | Turn 12: Agent B divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,264 | INFO | Turn 13 | message delivered | from=Agent A | to=Agent B | content=position=(1,3); door_unlocked=true | metadata={'position': {'x': 1, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,264 | INFO | Turn 13 | event=message_delivered | Turn 13: Message delivered from Agent A to Agent B.
+2026-04-15 10:21:59,264 | INFO | Turn 13 | message delivered | from=Agent B | to=Agent A | content=position=(2,3); holding_key=true; door_unlocked=true | metadata={'position': {'x': 2, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}}
+2026-04-15 10:21:59,264 | INFO | Turn 13 | event=message_delivered | Turn 13: Message delivered from Agent B to Agent A.
+2026-04-15 10:21:59,264 | INFO | Turn 13 | Agent A observation | Agent A observed 12 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,265 | INFO | Turn 13 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.86 | reason=the door is open, so push through the corridor to scout the far side
+2026-04-15 10:21:59,265 | INFO | Turn 13 | event=action | Turn 13: Agent A moved east to (2, 3).
+2026-04-15 10:21:59,265 | INFO | Turn 13 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,265 | INFO | Turn 13 | Agent B decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.86 | reason=the door is open, so push through the corridor to scout the far side
+2026-04-15 10:21:59,266 | INFO | Turn 13 | event=action | Turn 13: Agent B moved east to (3, 3).
+2026-04-15 10:21:59,266 | INFO | Turn 14 | Agent A observation | Agent A observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,266 | INFO | Turn 14 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.86 | reason=the door is open, so push through the corridor to scout the far side
+2026-04-15 10:21:59,266 | INFO | Turn 14 | event=action | Turn 14: Agent A moved east to (3, 3).
+2026-04-15 10:21:59,267 | WARNING | Turn 14 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (2, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,267 | INFO | Turn 14 | event=divergence | Turn 14: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,267 | INFO | Turn 14 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,267 | INFO | Turn 14 | Agent B decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.86 | reason=the door is open, so push through the corridor to scout the far side
+2026-04-15 10:21:59,267 | INFO | Turn 14 | event=action | Turn 14: Agent B moved east to (4, 3).
+2026-04-15 10:21:59,267 | WARNING | Turn 14 | Agent B divergence | kind=stale_teammate_location | belief=Agent A is at (1, 3) | reality=Agent A is elsewhere
+2026-04-15 10:21:59,267 | INFO | Turn 14 | event=divergence | Turn 14: Agent B divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,268 | INFO | Turn 15 | Agent A observation | Agent A observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 10:21:59,268 | INFO | Turn 15 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.86 | reason=the door is open, so push through the corridor to scout the far side
+2026-04-15 10:21:59,268 | INFO | Turn 15 | event=action | Turn 15: Agent A moved east to (4, 3).
+2026-04-15 10:21:59,268 | WARNING | Turn 15 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (2, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,268 | INFO | Turn 15 | event=divergence | Turn 15: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,268 | INFO | Turn 15 | Agent B observation | Agent B observed 13 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,268 | INFO | Turn 15 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'position=(4,3); holding_key=true; door_unlocked=true', 'metadata': {'position': {'x': 4, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,268 | INFO | Turn 15 | message queued | from=Agent B | to=Agent A | deliver_turn=16 | content=position=(4,3); holding_key=true; door_unlocked=true | metadata={'position': {'x': 4, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}
+2026-04-15 10:21:59,268 | INFO | Turn 15 | event=action | Turn 15: Agent B sent a message to Agent A.
+2026-04-15 10:21:59,269 | WARNING | Turn 15 | Agent B divergence | kind=stale_teammate_location | belief=Agent A is at (1, 3) | reality=Agent A is elsewhere
+2026-04-15 10:21:59,269 | INFO | Turn 15 | event=divergence | Turn 15: Agent B divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,269 | INFO | Turn 16 | message delivered | from=Agent B | to=Agent A | content=position=(4,3); holding_key=true; door_unlocked=true | metadata={'position': {'x': 4, 'y': 3}, 'teammate_has_key': True, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}
+2026-04-15 10:21:59,269 | INFO | Turn 16 | event=message_delivered | Turn 16: Message delivered from Agent B to Agent A.
+2026-04-15 10:21:59,269 | INFO | Turn 16 | Agent A observation | Agent A observed 13 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,269 | INFO | Turn 16 | Agent A decision | action=send_message | input={'recipient': 'Agent B', 'content': 'position=(4,3); door_unlocked=true', 'metadata': {'position': {'x': 4, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,269 | INFO | Turn 16 | message queued | from=Agent A | to=Agent B | deliver_turn=17 | content=position=(4,3); door_unlocked=true | metadata={'position': {'x': 4, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}
+2026-04-15 10:21:59,269 | INFO | Turn 16 | event=action | Turn 16: Agent A sent a message to Agent B.
+2026-04-15 10:21:59,270 | INFO | Turn 16 | Agent B observation | Agent B observed 13 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,270 | INFO | Turn 16 | Agent B decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.90 | reason=door is open and the exit is known
+2026-04-15 10:21:59,270 | INFO | Turn 16 | event=action | Turn 16: Agent B moved east to (5, 3).
+2026-04-15 10:21:59,270 | WARNING | Turn 16 | Agent B divergence | kind=stale_teammate_location | belief=Agent A is at (1, 3) | reality=Agent A is elsewhere
+2026-04-15 10:21:59,270 | INFO | Turn 16 | event=divergence | Turn 16: Agent B divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,270 | INFO | Turn 17 | message delivered | from=Agent A | to=Agent B | content=position=(4,3); door_unlocked=true | metadata={'position': {'x': 4, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}
+2026-04-15 10:21:59,270 | INFO | Turn 17 | event=message_delivered | Turn 17: Message delivered from Agent A to Agent B.
+2026-04-15 10:21:59,270 | INFO | Turn 17 | Agent A observation | Agent A observed 13 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,271 | INFO | Turn 17 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.90 | reason=door is open and the exit is known
+2026-04-15 10:21:59,271 | INFO | Turn 17 | event=action | Turn 17: Agent A moved east to (5, 3).
+2026-04-15 10:21:59,271 | WARNING | Turn 17 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (4, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,271 | INFO | Turn 17 | event=divergence | Turn 17: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,271 | INFO | Turn 17 | Agent B observation | Agent B observed 12 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,271 | INFO | Turn 17 | Agent B decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.90 | reason=door is open and the exit is known
+2026-04-15 10:21:59,271 | INFO | Turn 17 | event=action | Turn 17: Agent B moved east to (6, 3).
+2026-04-15 10:21:59,272 | INFO | Turn 18 | Agent A observation | Agent A observed 12 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,272 | INFO | Turn 18 | Agent A decision | action=send_message | input={'recipient': 'Agent B', 'content': 'position=(5,3); door_unlocked=true', 'metadata': {'position': {'x': 5, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}} | goal=coordinate | confidence=0.70 | reason=sharing a meaningful state update with the teammate
+2026-04-15 10:21:59,272 | INFO | Turn 18 | message queued | from=Agent A | to=Agent B | deliver_turn=19 | content=position=(5,3); door_unlocked=true | metadata={'position': {'x': 5, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}
+2026-04-15 10:21:59,272 | INFO | Turn 18 | event=action | Turn 18: Agent A sent a message to Agent B.
+2026-04-15 10:21:59,272 | WARNING | Turn 18 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (4, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,272 | INFO | Turn 18 | event=divergence | Turn 18: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,272 | INFO | Turn 18 | Agent B observation | Agent B observed 9 tiles and saw exit. | visible_objects=['exit']
+2026-04-15 10:21:59,272 | INFO | Turn 18 | Agent B decision | action=wait | input={} | goal=reach_exit | confidence=0.99 | reason=already at the exit and waiting for the teammate
+2026-04-15 10:21:59,272 | INFO | Turn 18 | event=action | Turn 18: Agent B waited.
+2026-04-15 10:21:59,273 | WARNING | Turn 18 | Agent B divergence | kind=stale_teammate_location | belief=Agent A is at (4, 3) | reality=Agent A is elsewhere
+2026-04-15 10:21:59,273 | INFO | Turn 18 | event=divergence | Turn 18: Agent B divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,273 | INFO | Turn 19 | message delivered | from=Agent A | to=Agent B | content=position=(5,3); door_unlocked=true | metadata={'position': {'x': 5, 'y': 3}, 'teammate_has_key': False, 'door_unlocked': True, 'door_position': {'x': 3, 'y': 3}, 'exit_position': {'x': 6, 'y': 3}}
+2026-04-15 10:21:59,273 | INFO | Turn 19 | event=message_delivered | Turn 19: Message delivered from Agent A to Agent B.
+2026-04-15 10:21:59,273 | INFO | Turn 19 | Agent A observation | Agent A observed 12 tiles and saw door, exit. | visible_objects=['door', 'exit']
+2026-04-15 10:21:59,273 | INFO | Turn 19 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_exit | confidence=0.90 | reason=door is open and the exit is known
+2026-04-15 10:21:59,273 | INFO | Turn 19 | event=action | Turn 19: Agent A moved east to (6, 3).
+2026-04-15 10:21:59,273 | WARNING | Turn 19 | Agent A divergence | kind=stale_teammate_location | belief=Agent B is at (4, 3) | reality=Agent B is elsewhere
+2026-04-15 10:21:59,273 | INFO | Turn 19 | event=divergence | Turn 19: Agent A divergence detected - stale_teammate_location.
+2026-04-15 10:21:59,274 | INFO | Turn 19 | Agent B observation | Agent B observed 9 tiles and saw exit. | visible_objects=['exit']
+2026-04-15 10:21:59,274 | INFO | Turn 19 | Agent B decision | action=wait | input={} | goal=reach_exit | confidence=0.99 | reason=already at the exit and waiting for the teammate
+2026-04-15 10:21:59,274 | INFO | Turn 19 | event=action | Turn 19: Agent B waited.
+2026-04-15 10:21:59,274 | INFO | Turn 19 | event=status | Turn 19: SUCCESS in 19 turns.
+2026-04-15 10:21:59,274 | INFO | Final status: SUCCESS
+2026-04-15 10:21:59,274 | INFO | Turns executed: 19
+2026-04-15 10:21:59,274 | INFO | Door locked: False
+2026-04-15 10:21:59,274 | INFO | Agent A final state | position=(6, 3) | inventory=[]
+2026-04-15 10:21:59,274 | INFO | Agent B final state | position=(6, 3) | inventory=['key']
+2026-04-15 10:21:59,274 | INFO | Trace summary: observations=38, decisions=38, actions=38, divergences=16, events=66

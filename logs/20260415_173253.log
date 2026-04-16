@@ -1,0 +1,247 @@
+2026-04-15 17:32:53,260 | INFO | Configured LiteLLM agent policy from environment | model=gemini/gemini-2.5-flash | temperature=0.2 | max_tokens=5000 | fallback=True
+2026-04-15 17:32:53,260 | INFO | Starting simulation | run_id=20260415_173253 | seed=7 | max_turns=20 | agent_mode=litellm | model=gemini/gemini-2.5-flash
+2026-04-15 17:32:53,267 | INFO | Turn 1 | event=status | Turn 1: initialized run 20260415_173253.
+2026-04-15 17:32:53,267 | INFO | Turn 1 | Agent A observation | Agent A observed 6 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:32:56,133 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:32:56,134 | INFO | Turn 1 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.9}
+2026-04-15 17:32:56,134 | INFO | Turn 1 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.90 | reason=explore new tiles
+2026-04-15 17:32:56,135 | INFO | Turn 1 | event=action | Turn 1: Agent A moved east to (1, 0).
+2026-04-15 17:32:56,135 | INFO | Turn 1 | Agent B observation | Agent B observed 6 tiles and saw key. | visible_objects=['key']
+2026-04-15 17:32:57,949 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:32:57,950 | INFO | Turn 1 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move toward key","goal":"retrieve_key","confidence":0.9}
+2026-04-15 17:32:57,950 | INFO | Turn 1 | Agent B decision | action=move | input={'direction': 'east'} | goal=retrieve_key | confidence=0.90 | reason=move toward key
+2026-04-15 17:32:57,951 | INFO | Turn 1 | event=action | Turn 1: Agent B moved east to (1, 6).
+2026-04-15 17:32:57,951 | INFO | Turn 2 | Agent A observation | Agent A observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:00,712 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:00,712 | INFO | Turn 2 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.9}
+2026-04-15 17:33:00,712 | INFO | Turn 2 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.90 | reason=explore new tiles
+2026-04-15 17:33:00,713 | INFO | Turn 2 | event=action | Turn 2: Agent A moved east to (2, 0).
+2026-04-15 17:33:00,713 | INFO | Turn 2 | Agent B observation | Agent B observed 8 tiles and saw key. | visible_objects=['key']
+2026-04-15 17:33:02,249 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:02,250 | INFO | Turn 2 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"pickup_key","direction":null,"recipient":null,"content":null,"metadata":null,"reason":"key is visible and reachable","goal":"retrieve_key","confidence":1.0}
+2026-04-15 17:33:02,250 | INFO | Turn 2 | Agent B decision | action=pickup_key | input={} | goal=retrieve_key | confidence=1.00 | reason=key is visible and reachable
+2026-04-15 17:33:02,250 | INFO | Turn 2 | event=action | Turn 2: Agent B picked up the key.
+2026-04-15 17:33:02,251 | INFO | Turn 3 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:04,502 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:04,502 | INFO | Turn 3 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.8}
+2026-04-15 17:33:04,502 | INFO | Turn 3 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.80 | reason=explore new tiles
+2026-04-15 17:33:04,503 | INFO | Turn 3 | event=action | Turn 3: Agent A failed to move east.
+2026-04-15 17:33:04,503 | INFO | Turn 3 | Agent B observation | Agent B observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:06,862 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:06,863 | INFO | Turn 3 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"inspect","direction":null,"recipient":null,"content":null,"metadata":null,"reason":"need more info to explore safely","goal":"explore","confidence":0.7}
+2026-04-15 17:33:06,863 | INFO | Turn 3 | Agent B decision | action=inspect | input={} | goal=explore | confidence=0.70 | reason=need more info to explore safely
+2026-04-15 17:33:06,864 | INFO | Turn 3 | event=action | Turn 3: Agent B inspected the nearby area.
+2026-04-15 17:33:06,865 | INFO | Turn 4 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:10,750 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:10,751 | INFO | Turn 4 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new areas, no objectives visible","goal":"explore","confidence":0.8}
+2026-04-15 17:33:10,751 | INFO | Turn 4 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.80 | reason=explore new areas, no objectives visible
+2026-04-15 17:33:10,752 | INFO | Turn 4 | event=action | Turn 4: Agent A failed to move east.
+2026-04-15 17:33:10,752 | INFO | Turn 4 | Agent B observation | Agent B observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:15,585 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:15,586 | INFO | Turn 4 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"inspect","direction":null,"recipient":null,"content":null,"metadata":null,"reason":"need more info about surroundings for exploration","goal":"explore","confidence":0.8}
+2026-04-15 17:33:15,586 | INFO | Turn 4 | Agent B decision | action=inspect | input={} | goal=explore | confidence=0.80 | reason=need more info about surroundings for exploration
+2026-04-15 17:33:15,586 | INFO | Turn 4 | event=action | Turn 4: Agent B inspected the nearby area.
+2026-04-15 17:33:15,587 | INFO | Turn 5 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:20,169 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:20,169 | INFO | Turn 5 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"explore new area","goal":"explore","confidence":0.8}
+2026-04-15 17:33:20,169 | INFO | Turn 5 | Agent A decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.80 | reason=explore new area
+2026-04-15 17:33:20,169 | INFO | Turn 5 | event=action | Turn 5: Agent A failed to move north.
+2026-04-15 17:33:20,170 | INFO | Turn 5 | Agent B observation | Agent B observed 8 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:22,524 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:22,524 | INFO | Turn 5 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.9}
+2026-04-15 17:33:22,524 | INFO | Turn 5 | Agent B decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.90 | reason=explore new tiles
+2026-04-15 17:33:22,524 | INFO | Turn 5 | event=action | Turn 5: Agent B moved east to (2, 6).
+2026-04-15 17:33:22,525 | INFO | Turn 6 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:25,788 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:25,789 | INFO | Turn 6 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.8}
+2026-04-15 17:33:25,789 | INFO | Turn 6 | Agent A decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.80 | reason=explore new tiles
+2026-04-15 17:33:25,789 | INFO | Turn 6 | event=action | Turn 6: Agent A failed to move north.
+2026-04-15 17:33:25,790 | INFO | Turn 6 | Agent B observation | Agent B observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:28,540 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:28,541 | INFO | Turn 6 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"explore new area","goal":"explore","confidence":0.8}
+2026-04-15 17:33:28,541 | INFO | Turn 6 | Agent B decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.80 | reason=explore new area
+2026-04-15 17:33:28,541 | INFO | Turn 6 | event=action | Turn 6: Agent B moved north to (2, 5).
+2026-04-15 17:33:28,542 | INFO | Turn 7 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:31,638 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:31,638 | INFO | Turn 7 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"explore new area","goal":"explore","confidence":0.8}
+2026-04-15 17:33:31,638 | INFO | Turn 7 | Agent A decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.80 | reason=explore new area
+2026-04-15 17:33:31,639 | INFO | Turn 7 | event=action | Turn 7: Agent A failed to move north.
+2026-04-15 17:33:31,639 | INFO | Turn 7 | Agent B observation | Agent B observed 12 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:33,788 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:33,789 | INFO | Turn 7 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.8}
+2026-04-15 17:33:33,789 | INFO | Turn 7 | Agent B decision | action=move | input={'direction': 'north'} | goal=explore | confidence=0.80 | reason=explore new tiles
+2026-04-15 17:33:33,790 | INFO | Turn 7 | event=action | Turn 7: Agent B moved north to (2, 4).
+2026-04-15 17:33:33,793 | INFO | Turn 8 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:38,398 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:38,399 | INFO | Turn 8 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new tiles","goal":"explore","confidence":0.8}
+2026-04-15 17:33:38,399 | INFO | Turn 8 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.80 | reason=explore new tiles
+2026-04-15 17:33:38,399 | INFO | Turn 8 | event=action | Turn 8: Agent A failed to move east.
+2026-04-15 17:33:38,400 | INFO | Turn 8 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:33:42,697 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:42,698 | INFO | Turn 8 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door seen","metadata":{},"reason":"share door location with teammate","goal":"coordinate","confidence":0.9}
+2026-04-15 17:33:42,698 | INFO | Turn 8 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door seen', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=share door location with teammate
+2026-04-15 17:33:42,698 | INFO | Turn 8 | message queued | from=Agent B | to=Agent A | deliver_turn=9 | content=door seen | metadata={}
+2026-04-15 17:33:42,698 | INFO | Turn 8 | event=action | Turn 8: Agent B sent a message to Agent A.
+2026-04-15 17:33:42,699 | INFO | Turn 9 | message delivered | from=Agent B | to=Agent A | content=door seen | metadata={}
+2026-04-15 17:33:42,699 | INFO | Turn 9 | event=message_delivered | Turn 9: Message delivered from Agent B to Agent A.
+2026-04-15 17:33:42,699 | INFO | Turn 9 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:33:46,895 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:46,895 | INFO | Turn 9 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore new area","goal":"explore","confidence":0.8}
+2026-04-15 17:33:46,895 | INFO | Turn 9 | Agent A decision | action=move | input={'direction': 'east'} | goal=explore | confidence=0.80 | reason=explore new area
+2026-04-15 17:33:46,896 | INFO | Turn 9 | event=action | Turn 9: Agent A failed to move east.
+2026-04-15 17:33:46,896 | INFO | Turn 9 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:33:58,467 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:33:58,467 | INFO | Turn 9 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"Door at (3,3)","metadata":{},"reason":"Share known door location with teammate.","goal":"share_info","confidence":0.9}
+2026-04-15 17:33:58,467 | INFO | Turn 9 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'Door at (3,3)', 'metadata': {}} | goal=share_info | confidence=0.90 | reason=Share known door location with teammate.
+2026-04-15 17:33:58,467 | INFO | Turn 9 | message queued | from=Agent B | to=Agent A | deliver_turn=10 | content=Door at (3,3) | metadata={}
+2026-04-15 17:33:58,467 | INFO | Turn 9 | event=action | Turn 9: Agent B sent a message to Agent A.
+2026-04-15 17:33:58,468 | INFO | Turn 10 | message delivered | from=Agent B | to=Agent A | content=Door at (3,3) | metadata={}
+2026-04-15 17:33:58,468 | INFO | Turn 10 | event=message_delivered | Turn 10: Message delivered from Agent B to Agent A.
+2026-04-15 17:33:58,469 | INFO | Turn 10 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:34:04,000 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:04,000 | INFO | Turn 10 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"explore to find key","goal":"find_key","confidence":0.8}
+2026-04-15 17:34:04,000 | INFO | Turn 10 | Agent A decision | action=move | input={'direction': 'east'} | goal=find_key | confidence=0.80 | reason=explore to find key
+2026-04-15 17:34:04,001 | INFO | Turn 10 | event=action | Turn 10: Agent A failed to move east.
+2026-04-15 17:34:04,001 | INFO | Turn 10 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:34:08,502 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:08,502 | INFO | Turn 10 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door seen at (3,3)","metadata":{},"reason":"share door location with teammate","goal":"coordinate","confidence":0.9}
+2026-04-15 17:34:08,502 | INFO | Turn 10 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door seen at (3,3)', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=share door location with teammate
+2026-04-15 17:34:08,503 | INFO | Turn 10 | message queued | from=Agent B | to=Agent A | deliver_turn=11 | content=door seen at (3,3) | metadata={}
+2026-04-15 17:34:08,503 | INFO | Turn 10 | event=action | Turn 10: Agent B sent a message to Agent A.
+2026-04-15 17:34:08,503 | INFO | Turn 11 | message delivered | from=Agent B | to=Agent A | content=door seen at (3,3) | metadata={}
+2026-04-15 17:34:08,503 | INFO | Turn 11 | event=message_delivered | Turn 11: Message delivered from Agent B to Agent A.
+2026-04-15 17:34:08,503 | INFO | Turn 11 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:34:13,724 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:13,725 | INFO | Turn 11 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move towards known door location","goal":"find_door","confidence":0.9}
+2026-04-15 17:34:13,725 | INFO | Turn 11 | Agent A decision | action=move | input={'direction': 'east'} | goal=find_door | confidence=0.90 | reason=move towards known door location
+2026-04-15 17:34:13,725 | INFO | Turn 11 | event=action | Turn 11: Agent A failed to move east.
+2026-04-15 17:34:13,726 | INFO | Turn 11 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:34:18,337 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:18,337 | INFO | Turn 11 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door seen","metadata":{},"reason":"share door location with teammate","goal":"share_door_location","confidence":0.9}
+2026-04-15 17:34:18,337 | INFO | Turn 11 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door seen', 'metadata': {}} | goal=share_door_location | confidence=0.90 | reason=share door location with teammate
+2026-04-15 17:34:18,337 | INFO | Turn 11 | message queued | from=Agent B | to=Agent A | deliver_turn=12 | content=door seen | metadata={}
+2026-04-15 17:34:18,337 | INFO | Turn 11 | event=action | Turn 11: Agent B sent a message to Agent A.
+2026-04-15 17:34:18,338 | INFO | Turn 12 | message delivered | from=Agent B | to=Agent A | content=door seen | metadata={}
+2026-04-15 17:34:18,338 | INFO | Turn 12 | event=message_delivered | Turn 12: Message delivered from Agent B to Agent A.
+2026-04-15 17:34:18,340 | INFO | Turn 12 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:34:24,988 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:24,988 | INFO | Turn 12 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"Move towards the door reported by Agent B.","goal":"find_door","confidence":0.8}
+2026-04-15 17:34:24,988 | INFO | Turn 12 | Agent A decision | action=move | input={'direction': 'north'} | goal=find_door | confidence=0.80 | reason=Move towards the door reported by Agent B.
+2026-04-15 17:34:24,988 | INFO | Turn 12 | event=action | Turn 12: Agent A failed to move north.
+2026-04-15 17:34:24,989 | INFO | Turn 12 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:34:30,622 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:30,623 | INFO | Turn 12 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"Door seen at (3,3).","metadata":{},"reason":"Share door location with teammate.","goal":"coordinate","confidence":0.9}
+2026-04-15 17:34:30,623 | INFO | Turn 12 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'Door seen at (3,3).', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=Share door location with teammate.
+2026-04-15 17:34:30,624 | INFO | Turn 12 | message queued | from=Agent B | to=Agent A | deliver_turn=13 | content=Door seen at (3,3). | metadata={}
+2026-04-15 17:34:30,624 | INFO | Turn 12 | event=action | Turn 12: Agent B sent a message to Agent A.
+2026-04-15 17:34:30,624 | INFO | Turn 13 | message delivered | from=Agent B | to=Agent A | content=Door seen at (3,3). | metadata={}
+2026-04-15 17:34:30,624 | INFO | Turn 13 | event=message_delivered | Turn 13: Message delivered from Agent B to Agent A.
+2026-04-15 17:34:30,624 | INFO | Turn 13 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:34:36,871 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:36,871 | INFO | Turn 13 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"move towards reported door location","goal":"find_door","confidence":0.8}
+2026-04-15 17:34:36,872 | INFO | Turn 13 | Agent A decision | action=move | input={'direction': 'north'} | goal=find_door | confidence=0.80 | reason=move towards reported door location
+2026-04-15 17:34:36,872 | INFO | Turn 13 | event=action | Turn 13: Agent A failed to move north.
+2026-04-15 17:34:36,876 | INFO | Turn 13 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:34:44,342 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:44,342 | INFO | Turn 13 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"Door location: (3,3)","metadata":{},"reason":"Share known door location with teammate.","goal":"coordinate","confidence":0.9}
+2026-04-15 17:34:44,342 | INFO | Turn 13 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'Door location: (3,3)', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=Share known door location with teammate.
+2026-04-15 17:34:44,343 | INFO | Turn 13 | message queued | from=Agent B | to=Agent A | deliver_turn=14 | content=Door location: (3,3) | metadata={}
+2026-04-15 17:34:44,343 | INFO | Turn 13 | event=action | Turn 13: Agent B sent a message to Agent A.
+2026-04-15 17:34:44,343 | INFO | Turn 14 | message delivered | from=Agent B | to=Agent A | content=Door location: (3,3) | metadata={}
+2026-04-15 17:34:44,343 | INFO | Turn 14 | event=message_delivered | Turn 14: Message delivered from Agent B to Agent A.
+2026-04-15 17:34:44,344 | INFO | Turn 14 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:34:49,462 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:49,462 | INFO | Turn 14 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"Move towards the door reported by Agent B.","goal":"reach_door","confidence":0.9}
+2026-04-15 17:34:49,462 | INFO | Turn 14 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_door | confidence=0.90 | reason=Move towards the door reported by Agent B.
+2026-04-15 17:34:49,463 | INFO | Turn 14 | event=action | Turn 14: Agent A failed to move east.
+2026-04-15 17:34:49,463 | INFO | Turn 14 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:34:53,669 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:53,669 | INFO | Turn 14 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door at (3,3)","metadata":{},"reason":"Share door location with teammate.","goal":"coordinate","confidence":0.9}
+2026-04-15 17:34:53,669 | INFO | Turn 14 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door at (3,3)', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=Share door location with teammate.
+2026-04-15 17:34:53,670 | INFO | Turn 14 | message queued | from=Agent B | to=Agent A | deliver_turn=15 | content=door at (3,3) | metadata={}
+2026-04-15 17:34:53,670 | INFO | Turn 14 | event=action | Turn 14: Agent B sent a message to Agent A.
+2026-04-15 17:34:53,670 | INFO | Turn 15 | message delivered | from=Agent B | to=Agent A | content=door at (3,3) | metadata={}
+2026-04-15 17:34:53,670 | INFO | Turn 15 | event=message_delivered | Turn 15: Message delivered from Agent B to Agent A.
+2026-04-15 17:34:53,671 | INFO | Turn 15 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:34:57,961 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:34:57,961 | INFO | Turn 15 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move towards known door location","goal":"reach_door","confidence":0.8}
+2026-04-15 17:34:57,961 | INFO | Turn 15 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_door | confidence=0.80 | reason=move towards known door location
+2026-04-15 17:34:57,961 | INFO | Turn 15 | event=action | Turn 15: Agent A failed to move east.
+2026-04-15 17:34:57,962 | INFO | Turn 15 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:35:06,256 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:06,257 | INFO | Turn 15 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"Door seen","metadata":{},"reason":"Share door location with teammate for coordination.","goal":"share_door_info","confidence":0.8}
+2026-04-15 17:35:06,257 | INFO | Turn 15 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'Door seen', 'metadata': {}} | goal=share_door_info | confidence=0.80 | reason=Share door location with teammate for coordination.
+2026-04-15 17:35:06,257 | INFO | Turn 15 | message queued | from=Agent B | to=Agent A | deliver_turn=16 | content=Door seen | metadata={}
+2026-04-15 17:35:06,257 | INFO | Turn 15 | event=action | Turn 15: Agent B sent a message to Agent A.
+2026-04-15 17:35:06,258 | INFO | Turn 16 | message delivered | from=Agent B | to=Agent A | content=Door seen | metadata={}
+2026-04-15 17:35:06,258 | INFO | Turn 16 | event=message_delivered | Turn 16: Message delivered from Agent B to Agent A.
+2026-04-15 17:35:06,258 | INFO | Turn 16 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:35:10,350 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:10,350 | INFO | Turn 16 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move towards known door location","goal":"reach_door","confidence":0.9}
+2026-04-15 17:35:10,350 | INFO | Turn 16 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_door | confidence=0.90 | reason=move towards known door location
+2026-04-15 17:35:10,350 | INFO | Turn 16 | event=action | Turn 16: Agent A failed to move east.
+2026-04-15 17:35:10,351 | INFO | Turn 16 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:35:19,774 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:19,775 | INFO | Turn 16 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"Door seen at (3,3).","metadata":{},"reason":"Share door location with teammate for coordination.","goal":"share_info","confidence":0.9}
+2026-04-15 17:35:19,775 | INFO | Turn 16 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'Door seen at (3,3).', 'metadata': {}} | goal=share_info | confidence=0.90 | reason=Share door location with teammate for coordination.
+2026-04-15 17:35:19,776 | INFO | Turn 16 | message queued | from=Agent B | to=Agent A | deliver_turn=17 | content=Door seen at (3,3). | metadata={}
+2026-04-15 17:35:19,776 | INFO | Turn 16 | event=action | Turn 16: Agent B sent a message to Agent A.
+2026-04-15 17:35:19,776 | INFO | Turn 17 | message delivered | from=Agent B | to=Agent A | content=Door seen at (3,3). | metadata={}
+2026-04-15 17:35:19,776 | INFO | Turn 17 | event=message_delivered | Turn 17: Message delivered from Agent B to Agent A.
+2026-04-15 17:35:19,776 | INFO | Turn 17 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:35:25,918 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:25,919 | INFO | Turn 17 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move towards reported door location","goal":"find_door","confidence":0.8}
+2026-04-15 17:35:25,919 | INFO | Turn 17 | Agent A decision | action=move | input={'direction': 'east'} | goal=find_door | confidence=0.80 | reason=move towards reported door location
+2026-04-15 17:35:25,919 | INFO | Turn 17 | event=action | Turn 17: Agent A failed to move east.
+2026-04-15 17:35:25,920 | INFO | Turn 17 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:35:34,872 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:34,873 | INFO | Turn 17 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"Door located at (3,3)","metadata":{},"reason":"Share door location with teammate for coordination.","goal":"share_door_location","confidence":0.9}
+2026-04-15 17:35:34,873 | INFO | Turn 17 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'Door located at (3,3)', 'metadata': {}} | goal=share_door_location | confidence=0.90 | reason=Share door location with teammate for coordination.
+2026-04-15 17:35:34,874 | INFO | Turn 17 | message queued | from=Agent B | to=Agent A | deliver_turn=18 | content=Door located at (3,3) | metadata={}
+2026-04-15 17:35:34,874 | INFO | Turn 17 | event=action | Turn 17: Agent B sent a message to Agent A.
+2026-04-15 17:35:34,874 | INFO | Turn 18 | message delivered | from=Agent B | to=Agent A | content=Door located at (3,3) | metadata={}
+2026-04-15 17:35:34,874 | INFO | Turn 18 | event=message_delivered | Turn 18: Message delivered from Agent B to Agent A.
+2026-04-15 17:35:34,875 | INFO | Turn 18 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:35:40,254 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:40,255 | INFO | Turn 18 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move towards reported door location","goal":"find_door","confidence":0.9}
+2026-04-15 17:35:40,255 | INFO | Turn 18 | Agent A decision | action=move | input={'direction': 'east'} | goal=find_door | confidence=0.90 | reason=move towards reported door location
+2026-04-15 17:35:40,255 | INFO | Turn 18 | event=action | Turn 18: Agent A failed to move east.
+2026-04-15 17:35:40,256 | INFO | Turn 18 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:35:44,041 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:44,041 | INFO | Turn 18 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door seen","metadata":{},"reason":"Share door location with teammate.","goal":"coordinate","confidence":0.9}
+2026-04-15 17:35:44,041 | INFO | Turn 18 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door seen', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=Share door location with teammate.
+2026-04-15 17:35:44,041 | INFO | Turn 18 | message queued | from=Agent B | to=Agent A | deliver_turn=19 | content=door seen | metadata={}
+2026-04-15 17:35:44,041 | INFO | Turn 18 | event=action | Turn 18: Agent B sent a message to Agent A.
+2026-04-15 17:35:44,042 | INFO | Turn 19 | message delivered | from=Agent B | to=Agent A | content=door seen | metadata={}
+2026-04-15 17:35:44,042 | INFO | Turn 19 | event=message_delivered | Turn 19: Message delivered from Agent B to Agent A.
+2026-04-15 17:35:44,042 | INFO | Turn 19 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:35:47,215 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:47,215 | INFO | Turn 19 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"east","recipient":null,"content":null,"metadata":null,"reason":"move towards known door location","goal":"reach_door","confidence":0.9}
+2026-04-15 17:35:47,215 | INFO | Turn 19 | Agent A decision | action=move | input={'direction': 'east'} | goal=reach_door | confidence=0.90 | reason=move towards known door location
+2026-04-15 17:35:47,216 | INFO | Turn 19 | event=action | Turn 19: Agent A failed to move east.
+2026-04-15 17:35:47,216 | INFO | Turn 19 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:35:52,542 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:52,543 | INFO | Turn 19 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door seen","metadata":{},"reason":"Share newly discovered door location with teammate.","goal":"share_door_info","confidence":0.9}
+2026-04-15 17:35:52,543 | INFO | Turn 19 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door seen', 'metadata': {}} | goal=share_door_info | confidence=0.90 | reason=Share newly discovered door location with teammate.
+2026-04-15 17:35:52,543 | INFO | Turn 19 | message queued | from=Agent B | to=Agent A | deliver_turn=20 | content=door seen | metadata={}
+2026-04-15 17:35:52,543 | INFO | Turn 19 | event=action | Turn 19: Agent B sent a message to Agent A.
+2026-04-15 17:35:52,543 | INFO | Turn 20 | message delivered | from=Agent B | to=Agent A | content=door seen | metadata={}
+2026-04-15 17:35:52,544 | INFO | Turn 20 | event=message_delivered | Turn 20: Message delivered from Agent B to Agent A.
+2026-04-15 17:35:52,544 | INFO | Turn 20 | Agent A observation | Agent A observed 9 tiles and saw no objectives. | visible_objects=['none']
+2026-04-15 17:35:56,124 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:56,124 | INFO | Turn 20 | Agent A llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"move","direction":"north","recipient":null,"content":null,"metadata":null,"reason":"move towards reported door location","goal":"explore_door","confidence":0.9}
+2026-04-15 17:35:56,124 | INFO | Turn 20 | Agent A decision | action=move | input={'direction': 'north'} | goal=explore_door | confidence=0.90 | reason=move towards reported door location
+2026-04-15 17:35:56,124 | INFO | Turn 20 | event=action | Turn 20: Agent A failed to move north.
+2026-04-15 17:35:56,126 | INFO | Turn 20 | Agent B observation | Agent B observed 13 tiles and saw door. | visible_objects=['door']
+2026-04-15 17:35:59,159 | WARNING | LiteLLM returned structured content without message.parsed; validating message.content against ActionDecision instead.
+2026-04-15 17:35:59,160 | INFO | Turn 20 | Agent B llm_structured_response | model=gemini/gemini-2.5-flash | decision={"action":"send_message","direction":null,"recipient":"Agent A","content":"door seen","metadata":{},"reason":"share door location with teammate","goal":"coordinate","confidence":0.9}
+2026-04-15 17:35:59,160 | INFO | Turn 20 | Agent B decision | action=send_message | input={'recipient': 'Agent A', 'content': 'door seen', 'metadata': {}} | goal=coordinate | confidence=0.90 | reason=share door location with teammate
+2026-04-15 17:35:59,160 | INFO | Turn 20 | message queued | from=Agent B | to=Agent A | deliver_turn=21 | content=door seen | metadata={}
+2026-04-15 17:35:59,160 | INFO | Turn 20 | event=action | Turn 20: Agent B sent a message to Agent A.
+2026-04-15 17:35:59,160 | INFO | Turn 20 | event=status | Turn 20: FAILED after reaching max turns.
+2026-04-15 17:35:59,161 | INFO | Final status: FAILED
+2026-04-15 17:35:59,161 | INFO | Turns executed: 20
+2026-04-15 17:35:59,161 | INFO | Door locked: True
+2026-04-15 17:35:59,161 | INFO | Agent A final state | position=(2, 0) | inventory=[]
+2026-04-15 17:35:59,161 | INFO | Agent B final state | position=(2, 4) | inventory=['key']
+2026-04-15 17:35:59,161 | INFO | Trace summary: observations=42, decisions=40, actions=40, divergences=0, events=54

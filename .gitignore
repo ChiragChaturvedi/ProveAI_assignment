@@ -8,6 +8,3 @@ __pycache__/
 # Environment files
 .env
 
-# Logs
-logs/
-*.log
