@@ -1,0 +1,2114 @@
+{
+  "source_file": "/Users/chiragchaturvedi/Productive/Interview/ProveAI/ProveAI_assignment/logs/20260415_173253.log",
+  "run_id": "20260415_173253",
+  "model_name": "gemini/gemini-2.5-flash",
+  "agent_mode": "litellm",
+  "seed": 7,
+  "max_turns": 20,
+  "final_status": "FAILED",
+  "turns_executed": 20,
+  "final_door_locked": true,
+  "observations": [
+    {
+      "timestamp": "2026-04-15T17:32:53.267000",
+      "level": "INFO",
+      "turn": 1,
+      "agent": "Agent A",
+      "summary": "Agent A observed 6 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:32:56.135000",
+      "level": "INFO",
+      "turn": 1,
+      "agent": "Agent B",
+      "summary": "Agent B observed 6 tiles and saw key.",
+      "visible_objects": [
+        "key"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:32:57.951000",
+      "level": "INFO",
+      "turn": 2,
+      "agent": "Agent A",
+      "summary": "Agent A observed 8 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:00.713000",
+      "level": "INFO",
+      "turn": 2,
+      "agent": "Agent B",
+      "summary": "Agent B observed 8 tiles and saw key.",
+      "visible_objects": [
+        "key"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:02.251000",
+      "level": "INFO",
+      "turn": 3,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:04.503000",
+      "level": "INFO",
+      "turn": 3,
+      "agent": "Agent B",
+      "summary": "Agent B observed 8 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:06.865000",
+      "level": "INFO",
+      "turn": 4,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:10.752000",
+      "level": "INFO",
+      "turn": 4,
+      "agent": "Agent B",
+      "summary": "Agent B observed 8 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:15.587000",
+      "level": "INFO",
+      "turn": 5,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:20.170000",
+      "level": "INFO",
+      "turn": 5,
+      "agent": "Agent B",
+      "summary": "Agent B observed 8 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:22.525000",
+      "level": "INFO",
+      "turn": 6,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:25.790000",
+      "level": "INFO",
+      "turn": 6,
+      "agent": "Agent B",
+      "summary": "Agent B observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:28.542000",
+      "level": "INFO",
+      "turn": 7,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:31.639000",
+      "level": "INFO",
+      "turn": 7,
+      "agent": "Agent B",
+      "summary": "Agent B observed 12 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:33.793000",
+      "level": "INFO",
+      "turn": 8,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:38.400000",
+      "level": "INFO",
+      "turn": 8,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:42.699000",
+      "level": "INFO",
+      "turn": 9,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:46.896000",
+      "level": "INFO",
+      "turn": 9,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.469000",
+      "level": "INFO",
+      "turn": 10,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:04.001000",
+      "level": "INFO",
+      "turn": 10,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.503000",
+      "level": "INFO",
+      "turn": 11,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:13.726000",
+      "level": "INFO",
+      "turn": 11,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.340000",
+      "level": "INFO",
+      "turn": 12,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:24.989000",
+      "level": "INFO",
+      "turn": 12,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.624000",
+      "level": "INFO",
+      "turn": 13,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:36.876000",
+      "level": "INFO",
+      "turn": 13,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.344000",
+      "level": "INFO",
+      "turn": 14,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:49.463000",
+      "level": "INFO",
+      "turn": 14,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.671000",
+      "level": "INFO",
+      "turn": 15,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:34:57.962000",
+      "level": "INFO",
+      "turn": 15,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.258000",
+      "level": "INFO",
+      "turn": 16,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:10.351000",
+      "level": "INFO",
+      "turn": 16,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.776000",
+      "level": "INFO",
+      "turn": 17,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:25.920000",
+      "level": "INFO",
+      "turn": 17,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.875000",
+      "level": "INFO",
+      "turn": 18,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:40.256000",
+      "level": "INFO",
+      "turn": 18,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.042000",
+      "level": "INFO",
+      "turn": 19,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:47.216000",
+      "level": "INFO",
+      "turn": 19,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.544000",
+      "level": "INFO",
+      "turn": 20,
+      "agent": "Agent A",
+      "summary": "Agent A observed 9 tiles and saw no objectives.",
+      "visible_objects": [
+        "none"
+      ]
+    },
+    {
+      "timestamp": "2026-04-15T17:35:56.126000",
+      "level": "INFO",
+      "turn": 20,
+      "agent": "Agent B",
+      "summary": "Agent B observed 13 tiles and saw door.",
+      "visible_objects": [
+        "door"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "timestamp": "2026-04-15T17:32:56.134000",
+      "level": "INFO",
+      "turn": 1,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.9,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:32:57.950000",
+      "level": "INFO",
+      "turn": 1,
+      "agent": "Agent B",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "retrieve_key",
+      "confidence": 0.9,
+      "reason": "move toward key"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:00.712000",
+      "level": "INFO",
+      "turn": 2,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.9,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:02.250000",
+      "level": "INFO",
+      "turn": 2,
+      "agent": "Agent B",
+      "action": "pickup_key",
+      "action_input": {},
+      "goal": "retrieve_key",
+      "confidence": 1.0,
+      "reason": "key is visible and reachable"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:04.502000",
+      "level": "INFO",
+      "turn": 3,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:06.863000",
+      "level": "INFO",
+      "turn": 3,
+      "agent": "Agent B",
+      "action": "inspect",
+      "action_input": {},
+      "goal": "explore",
+      "confidence": 0.7,
+      "reason": "need more info to explore safely"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:10.751000",
+      "level": "INFO",
+      "turn": 4,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new areas, no objectives visible"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:15.586000",
+      "level": "INFO",
+      "turn": 4,
+      "agent": "Agent B",
+      "action": "inspect",
+      "action_input": {},
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "need more info about surroundings for exploration"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:20.169000",
+      "level": "INFO",
+      "turn": 5,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new area"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:22.524000",
+      "level": "INFO",
+      "turn": 5,
+      "agent": "Agent B",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.9,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:25.789000",
+      "level": "INFO",
+      "turn": 6,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:28.541000",
+      "level": "INFO",
+      "turn": 6,
+      "agent": "Agent B",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new area"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:31.638000",
+      "level": "INFO",
+      "turn": 7,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new area"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:33.789000",
+      "level": "INFO",
+      "turn": 7,
+      "agent": "Agent B",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:38.399000",
+      "level": "INFO",
+      "turn": 8,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new tiles"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:42.698000",
+      "level": "INFO",
+      "turn": 8,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door seen",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "share door location with teammate"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:46.895000",
+      "level": "INFO",
+      "turn": 9,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "explore",
+      "confidence": 0.8,
+      "reason": "explore new area"
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.467000",
+      "level": "INFO",
+      "turn": 9,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "Door at (3,3)",
+        "metadata": {}
+      },
+      "goal": "share_info",
+      "confidence": 0.9,
+      "reason": "Share known door location with teammate."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:04",
+      "level": "INFO",
+      "turn": 10,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "find_key",
+      "confidence": 0.8,
+      "reason": "explore to find key"
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.502000",
+      "level": "INFO",
+      "turn": 10,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door seen at (3,3)",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "share door location with teammate"
+    },
+    {
+      "timestamp": "2026-04-15T17:34:13.725000",
+      "level": "INFO",
+      "turn": 11,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "find_door",
+      "confidence": 0.9,
+      "reason": "move towards known door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.337000",
+      "level": "INFO",
+      "turn": 11,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door seen",
+        "metadata": {}
+      },
+      "goal": "share_door_location",
+      "confidence": 0.9,
+      "reason": "share door location with teammate"
+    },
+    {
+      "timestamp": "2026-04-15T17:34:24.988000",
+      "level": "INFO",
+      "turn": 12,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "find_door",
+      "confidence": 0.8,
+      "reason": "Move towards the door reported by Agent B."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.623000",
+      "level": "INFO",
+      "turn": 12,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "Door seen at (3,3).",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "Share door location with teammate."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:36.872000",
+      "level": "INFO",
+      "turn": 13,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "find_door",
+      "confidence": 0.8,
+      "reason": "move towards reported door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.342000",
+      "level": "INFO",
+      "turn": 13,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "Door location: (3,3)",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "Share known door location with teammate."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:49.462000",
+      "level": "INFO",
+      "turn": 14,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "reach_door",
+      "confidence": 0.9,
+      "reason": "Move towards the door reported by Agent B."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.669000",
+      "level": "INFO",
+      "turn": 14,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door at (3,3)",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "Share door location with teammate."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:57.961000",
+      "level": "INFO",
+      "turn": 15,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "reach_door",
+      "confidence": 0.8,
+      "reason": "move towards known door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.257000",
+      "level": "INFO",
+      "turn": 15,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "Door seen",
+        "metadata": {}
+      },
+      "goal": "share_door_info",
+      "confidence": 0.8,
+      "reason": "Share door location with teammate for coordination."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:10.350000",
+      "level": "INFO",
+      "turn": 16,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "reach_door",
+      "confidence": 0.9,
+      "reason": "move towards known door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.775000",
+      "level": "INFO",
+      "turn": 16,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "Door seen at (3,3).",
+        "metadata": {}
+      },
+      "goal": "share_info",
+      "confidence": 0.9,
+      "reason": "Share door location with teammate for coordination."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:25.919000",
+      "level": "INFO",
+      "turn": 17,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "find_door",
+      "confidence": 0.8,
+      "reason": "move towards reported door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.873000",
+      "level": "INFO",
+      "turn": 17,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "Door located at (3,3)",
+        "metadata": {}
+      },
+      "goal": "share_door_location",
+      "confidence": 0.9,
+      "reason": "Share door location with teammate for coordination."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:40.255000",
+      "level": "INFO",
+      "turn": 18,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "find_door",
+      "confidence": 0.9,
+      "reason": "move towards reported door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.041000",
+      "level": "INFO",
+      "turn": 18,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door seen",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "Share door location with teammate."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:47.215000",
+      "level": "INFO",
+      "turn": 19,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "east"
+      },
+      "goal": "reach_door",
+      "confidence": 0.9,
+      "reason": "move towards known door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.543000",
+      "level": "INFO",
+      "turn": 19,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door seen",
+        "metadata": {}
+      },
+      "goal": "share_door_info",
+      "confidence": 0.9,
+      "reason": "Share newly discovered door location with teammate."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:56.124000",
+      "level": "INFO",
+      "turn": 20,
+      "agent": "Agent A",
+      "action": "move",
+      "action_input": {
+        "direction": "north"
+      },
+      "goal": "explore_door",
+      "confidence": 0.9,
+      "reason": "move towards reported door location"
+    },
+    {
+      "timestamp": "2026-04-15T17:35:59.160000",
+      "level": "INFO",
+      "turn": 20,
+      "agent": "Agent B",
+      "action": "send_message",
+      "action_input": {
+        "recipient": "Agent A",
+        "content": "door seen",
+        "metadata": {}
+      },
+      "goal": "coordinate",
+      "confidence": 0.9,
+      "reason": "share door location with teammate"
+    }
+  ],
+  "action_results": [
+    {
+      "timestamp": "2026-04-15T17:32:56.135000",
+      "level": "INFO",
+      "turn": 1,
+      "agent": "Agent A",
+      "action": "move",
+      "success": true,
+      "summary": "Turn 1: Agent A moved east to (1, 0)."
+    },
+    {
+      "timestamp": "2026-04-15T17:32:57.951000",
+      "level": "INFO",
+      "turn": 1,
+      "agent": "Agent B",
+      "action": "move",
+      "success": true,
+      "summary": "Turn 1: Agent B moved east to (1, 6)."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:00.713000",
+      "level": "INFO",
+      "turn": 2,
+      "agent": "Agent A",
+      "action": "move",
+      "success": true,
+      "summary": "Turn 2: Agent A moved east to (2, 0)."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:02.250000",
+      "level": "INFO",
+      "turn": 2,
+      "agent": "Agent B",
+      "action": "pickup_key",
+      "success": true,
+      "summary": "Turn 2: Agent B picked up the key."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:04.503000",
+      "level": "INFO",
+      "turn": 3,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 3: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:06.864000",
+      "level": "INFO",
+      "turn": 3,
+      "agent": "Agent B",
+      "action": "inspect",
+      "success": true,
+      "summary": "Turn 3: Agent B inspected the nearby area."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:10.752000",
+      "level": "INFO",
+      "turn": 4,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 4: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:15.586000",
+      "level": "INFO",
+      "turn": 4,
+      "agent": "Agent B",
+      "action": "inspect",
+      "success": true,
+      "summary": "Turn 4: Agent B inspected the nearby area."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:20.169000",
+      "level": "INFO",
+      "turn": 5,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 5: Agent A failed to move north."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:22.524000",
+      "level": "INFO",
+      "turn": 5,
+      "agent": "Agent B",
+      "action": "move",
+      "success": true,
+      "summary": "Turn 5: Agent B moved east to (2, 6)."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:25.789000",
+      "level": "INFO",
+      "turn": 6,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 6: Agent A failed to move north."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:28.541000",
+      "level": "INFO",
+      "turn": 6,
+      "agent": "Agent B",
+      "action": "move",
+      "success": true,
+      "summary": "Turn 6: Agent B moved north to (2, 5)."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:31.639000",
+      "level": "INFO",
+      "turn": 7,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 7: Agent A failed to move north."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:33.790000",
+      "level": "INFO",
+      "turn": 7,
+      "agent": "Agent B",
+      "action": "move",
+      "success": true,
+      "summary": "Turn 7: Agent B moved north to (2, 4)."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:38.399000",
+      "level": "INFO",
+      "turn": 8,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 8: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:42.698000",
+      "level": "INFO",
+      "turn": 8,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 8: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:46.896000",
+      "level": "INFO",
+      "turn": 9,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 9: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.467000",
+      "level": "INFO",
+      "turn": 9,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 9: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:04.001000",
+      "level": "INFO",
+      "turn": 10,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 10: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.503000",
+      "level": "INFO",
+      "turn": 10,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 10: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:13.725000",
+      "level": "INFO",
+      "turn": 11,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 11: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.337000",
+      "level": "INFO",
+      "turn": 11,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 11: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:24.988000",
+      "level": "INFO",
+      "turn": 12,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 12: Agent A failed to move north."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.624000",
+      "level": "INFO",
+      "turn": 12,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 12: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:36.872000",
+      "level": "INFO",
+      "turn": 13,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 13: Agent A failed to move north."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.343000",
+      "level": "INFO",
+      "turn": 13,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 13: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:49.463000",
+      "level": "INFO",
+      "turn": 14,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 14: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.670000",
+      "level": "INFO",
+      "turn": 14,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 14: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:34:57.961000",
+      "level": "INFO",
+      "turn": 15,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 15: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.257000",
+      "level": "INFO",
+      "turn": 15,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 15: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:10.350000",
+      "level": "INFO",
+      "turn": 16,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 16: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.776000",
+      "level": "INFO",
+      "turn": 16,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 16: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:25.919000",
+      "level": "INFO",
+      "turn": 17,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 17: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.874000",
+      "level": "INFO",
+      "turn": 17,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 17: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:40.255000",
+      "level": "INFO",
+      "turn": 18,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 18: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.041000",
+      "level": "INFO",
+      "turn": 18,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 18: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:47.216000",
+      "level": "INFO",
+      "turn": 19,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 19: Agent A failed to move east."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.543000",
+      "level": "INFO",
+      "turn": 19,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 19: Agent B sent a message to Agent A."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:56.124000",
+      "level": "INFO",
+      "turn": 20,
+      "agent": "Agent A",
+      "action": "move",
+      "success": false,
+      "summary": "Turn 20: Agent A failed to move north."
+    },
+    {
+      "timestamp": "2026-04-15T17:35:59.160000",
+      "level": "INFO",
+      "turn": 20,
+      "agent": "Agent B",
+      "action": "send_message",
+      "success": true,
+      "summary": "Turn 20: Agent B sent a message to Agent A."
+    }
+  ],
+  "queued_messages": [
+    {
+      "timestamp": "2026-04-15T17:33:42.698000",
+      "level": "INFO",
+      "turn": 8,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": 9
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.467000",
+      "level": "INFO",
+      "turn": 9,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door at (3,3)",
+      "metadata": {},
+      "deliver_turn": 10
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.503000",
+      "level": "INFO",
+      "turn": 10,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen at (3,3)",
+      "metadata": {},
+      "deliver_turn": 11
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.337000",
+      "level": "INFO",
+      "turn": 11,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": 12
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.624000",
+      "level": "INFO",
+      "turn": 12,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door seen at (3,3).",
+      "metadata": {},
+      "deliver_turn": 13
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.343000",
+      "level": "INFO",
+      "turn": 13,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door location: (3,3)",
+      "metadata": {},
+      "deliver_turn": 14
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.670000",
+      "level": "INFO",
+      "turn": 14,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door at (3,3)",
+      "metadata": {},
+      "deliver_turn": 15
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.257000",
+      "level": "INFO",
+      "turn": 15,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door seen",
+      "metadata": {},
+      "deliver_turn": 16
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.776000",
+      "level": "INFO",
+      "turn": 16,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door seen at (3,3).",
+      "metadata": {},
+      "deliver_turn": 17
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.874000",
+      "level": "INFO",
+      "turn": 17,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door located at (3,3)",
+      "metadata": {},
+      "deliver_turn": 18
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.041000",
+      "level": "INFO",
+      "turn": 18,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": 19
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.543000",
+      "level": "INFO",
+      "turn": 19,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": 20
+    },
+    {
+      "timestamp": "2026-04-15T17:35:59.160000",
+      "level": "INFO",
+      "turn": 20,
+      "phase": "queued",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": 21
+    }
+  ],
+  "delivered_messages": [
+    {
+      "timestamp": "2026-04-15T17:33:42.699000",
+      "level": "INFO",
+      "turn": 9,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.468000",
+      "level": "INFO",
+      "turn": 10,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door at (3,3)",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.503000",
+      "level": "INFO",
+      "turn": 11,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen at (3,3)",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.338000",
+      "level": "INFO",
+      "turn": 12,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.624000",
+      "level": "INFO",
+      "turn": 13,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door seen at (3,3).",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.343000",
+      "level": "INFO",
+      "turn": 14,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door location: (3,3)",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.670000",
+      "level": "INFO",
+      "turn": 15,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door at (3,3)",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.258000",
+      "level": "INFO",
+      "turn": 16,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door seen",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.776000",
+      "level": "INFO",
+      "turn": 17,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door seen at (3,3).",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.874000",
+      "level": "INFO",
+      "turn": 18,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "Door located at (3,3)",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.042000",
+      "level": "INFO",
+      "turn": 19,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": null
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.543000",
+      "level": "INFO",
+      "turn": 20,
+      "phase": "delivered",
+      "sender": "Agent B",
+      "recipient": "Agent A",
+      "content": "door seen",
+      "metadata": {},
+      "deliver_turn": null
+    }
+  ],
+  "divergences": [],
+  "events": [
+    {
+      "timestamp": "2026-04-15T17:32:53.267000",
+      "level": "INFO",
+      "turn": 1,
+      "actor": "System",
+      "event_type": "status",
+      "summary": "Turn 1: initialized run 20260415_173253.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:32:56.135000",
+      "level": "INFO",
+      "turn": 1,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 1: Agent A moved east to (1, 0).",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:32:57.951000",
+      "level": "INFO",
+      "turn": 1,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 1: Agent B moved east to (1, 6).",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:00.713000",
+      "level": "INFO",
+      "turn": 2,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 2: Agent A moved east to (2, 0).",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:02.250000",
+      "level": "INFO",
+      "turn": 2,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 2: Agent B picked up the key.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:04.503000",
+      "level": "INFO",
+      "turn": 3,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 3: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:06.864000",
+      "level": "INFO",
+      "turn": 3,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 3: Agent B inspected the nearby area.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:10.752000",
+      "level": "INFO",
+      "turn": 4,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 4: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:15.586000",
+      "level": "INFO",
+      "turn": 4,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 4: Agent B inspected the nearby area.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:20.169000",
+      "level": "INFO",
+      "turn": 5,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 5: Agent A failed to move north.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:22.524000",
+      "level": "INFO",
+      "turn": 5,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 5: Agent B moved east to (2, 6).",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:25.789000",
+      "level": "INFO",
+      "turn": 6,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 6: Agent A failed to move north.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:28.541000",
+      "level": "INFO",
+      "turn": 6,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 6: Agent B moved north to (2, 5).",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:31.639000",
+      "level": "INFO",
+      "turn": 7,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 7: Agent A failed to move north.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:33.790000",
+      "level": "INFO",
+      "turn": 7,
+      "actor": "Agent B",
+      "event_type": "action",
+      "summary": "Turn 7: Agent B moved north to (2, 4).",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:38.399000",
+      "level": "INFO",
+      "turn": 8,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 8: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:42.698000",
+      "level": "INFO",
+      "turn": 8,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 8: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:42.699000",
+      "level": "INFO",
+      "turn": 9,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 9: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:46.896000",
+      "level": "INFO",
+      "turn": 9,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 9: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.467000",
+      "level": "INFO",
+      "turn": 9,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 9: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:33:58.468000",
+      "level": "INFO",
+      "turn": 10,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 10: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:04.001000",
+      "level": "INFO",
+      "turn": 10,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 10: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.503000",
+      "level": "INFO",
+      "turn": 10,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 10: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:08.503000",
+      "level": "INFO",
+      "turn": 11,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 11: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:13.725000",
+      "level": "INFO",
+      "turn": 11,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 11: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.337000",
+      "level": "INFO",
+      "turn": 11,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 11: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:18.338000",
+      "level": "INFO",
+      "turn": 12,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 12: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:24.988000",
+      "level": "INFO",
+      "turn": 12,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 12: Agent A failed to move north.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.624000",
+      "level": "INFO",
+      "turn": 12,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 12: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:30.624000",
+      "level": "INFO",
+      "turn": 13,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 13: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:36.872000",
+      "level": "INFO",
+      "turn": 13,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 13: Agent A failed to move north.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.343000",
+      "level": "INFO",
+      "turn": 13,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 13: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:44.343000",
+      "level": "INFO",
+      "turn": 14,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 14: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:49.463000",
+      "level": "INFO",
+      "turn": 14,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 14: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.670000",
+      "level": "INFO",
+      "turn": 14,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 14: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:53.670000",
+      "level": "INFO",
+      "turn": 15,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 15: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:34:57.961000",
+      "level": "INFO",
+      "turn": 15,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 15: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.257000",
+      "level": "INFO",
+      "turn": 15,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 15: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:06.258000",
+      "level": "INFO",
+      "turn": 16,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 16: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:10.350000",
+      "level": "INFO",
+      "turn": 16,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 16: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.776000",
+      "level": "INFO",
+      "turn": 16,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 16: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:19.776000",
+      "level": "INFO",
+      "turn": 17,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 17: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:25.919000",
+      "level": "INFO",
+      "turn": 17,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 17: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.874000",
+      "level": "INFO",
+      "turn": 17,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 17: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:34.874000",
+      "level": "INFO",
+      "turn": 18,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 18: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:40.255000",
+      "level": "INFO",
+      "turn": 18,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 18: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.041000",
+      "level": "INFO",
+      "turn": 18,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 18: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:44.042000",
+      "level": "INFO",
+      "turn": 19,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 19: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:47.216000",
+      "level": "INFO",
+      "turn": 19,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 19: Agent A failed to move east.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.543000",
+      "level": "INFO",
+      "turn": 19,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 19: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:52.544000",
+      "level": "INFO",
+      "turn": 20,
+      "actor": "Agent A",
+      "event_type": "message_delivered",
+      "summary": "Turn 20: Message delivered from Agent B to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:56.124000",
+      "level": "INFO",
+      "turn": 20,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 20: Agent A failed to move north.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:59.160000",
+      "level": "INFO",
+      "turn": 20,
+      "actor": "Agent A",
+      "event_type": "action",
+      "summary": "Turn 20: Agent B sent a message to Agent A.",
+      "details": {}
+    },
+    {
+      "timestamp": "2026-04-15T17:35:59.160000",
+      "level": "INFO",
+      "turn": 20,
+      "actor": "System",
+      "event_type": "status",
+      "summary": "Turn 20: FAILED after reaching max turns.",
+      "details": {}
+    }
+  ],
+  "final_agent_states": [
+    {
+      "agent": "Agent A",
+      "position": {
+        "x": 2,
+        "y": 0
+      },
+      "inventory": []
+    },
+    {
+      "agent": "Agent B",
+      "position": {
+        "x": 2,
+        "y": 4
+      },
+      "inventory": [
+        "key"
+      ]
+    }
+  ],
+  "trace_summary": {
+    "observations": 42,
+    "decisions": 40,
+    "actions": 40,
+    "divergences": 0,
+    "events": 54
+  },
+  "raw_errors": [],
+  "metadata": {}
+}
